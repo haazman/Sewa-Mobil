@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Sewa Mobil", "Sewa Mobil\Sewa Mobil.vbproj", "{2D8AF78F-6DCD-473D-9FEF-5F08DB09FAFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D8AF78F-6DCD-473D-9FEF-5F08DB09FAFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D8AF78F-6DCD-473D-9FEF-5F08DB09FAFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D8AF78F-6DCD-473D-9FEF-5F08DB09FAFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D8AF78F-6DCD-473D-9FEF-5F08DB09FAFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B40E7A6-A99A-4C90-8DAF-DB16BDCD0943}
+	EndGlobalSection
+EndGlobal
