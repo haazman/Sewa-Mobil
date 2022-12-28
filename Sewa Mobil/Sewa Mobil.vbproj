@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of f52557e (Revert "login, logout, sign up")
     <StartupObject>Sewa_Mobil.mobil</StartupObject>
@@ -28,6 +29,9 @@
 >>>>>>> parent of f99ea17 (form mobil)
 =======
 >>>>>>> parent of f52557e (Revert "login, logout, sign up")
+=======
+    <StartupObject>Sub Main</StartupObject>
+>>>>>>> parent of f99ea17 (form mobil)
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
   </PropertyGroup>
