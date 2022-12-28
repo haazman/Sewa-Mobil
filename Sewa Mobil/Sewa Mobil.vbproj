@@ -4,7 +4,15 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <RootNamespace>Sewa_Mobil</RootNamespace>
-    <StartupObject>Sub Main</StartupObject>
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <StartupObject>Sewa_Mobil.mobil</StartupObject>
+=======
+    <StartupObject>Sewa_Mobil.Jenis_Mobil</StartupObject>
+>>>>>>> 845edbff4939d892b83c0b6a32612d30b9ce6052
+=======
+    <StartupObject>Sewa_Mobil.Form1</StartupObject>
+>>>>>>> parent of 905ab03 (login, logout, sign up)
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
   </PropertyGroup>
