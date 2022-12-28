@@ -4,7 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <RootNamespace>Sewa_Mobil</RootNamespace>
-    <StartupObject>Sub Main</StartupObject>
+    <StartupObject>Sewa_Mobil.mobil</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
   </PropertyGroup>
