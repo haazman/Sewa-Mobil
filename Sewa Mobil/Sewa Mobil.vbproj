@@ -11,8 +11,13 @@
     <StartupObject>Sewa_Mobil.Jenis_Mobil</StartupObject>
 >>>>>>> 845edbff4939d892b83c0b6a32612d30b9ce6052
 =======
+<<<<<<< HEAD
     <StartupObject>Sub Main</StartupObject>
 >>>>>>> parent of f99ea17 (form mobil)
+=======
+    <StartupObject>Sewa_Mobil.Form1</StartupObject>
+>>>>>>> parent of 905ab03 (login, logout, sign up)
+>>>>>>> f52557e1be20f47fc2b3c6804aaf3cae7196a175
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
   </PropertyGroup>
