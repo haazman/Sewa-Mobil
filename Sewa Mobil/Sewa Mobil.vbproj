@@ -6,6 +6,7 @@
     <RootNamespace>Sewa_Mobil</RootNamespace>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <StartupObject>Sewa_Mobil.mobil</StartupObject>
 =======
     <StartupObject>Sewa_Mobil.Jenis_Mobil</StartupObject>
@@ -13,6 +14,9 @@
 =======
     <StartupObject>Sewa_Mobil.Form1</StartupObject>
 >>>>>>> parent of 905ab03 (login, logout, sign up)
+=======
+    <StartupObject>Sub Main</StartupObject>
+>>>>>>> parent of f99ea17 (form mobil)
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
   </PropertyGroup>
