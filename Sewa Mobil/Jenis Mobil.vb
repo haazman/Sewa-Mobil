@@ -1,14 +1,12 @@
 ﻿Public Class Jenis_Mobil
     Dim jenisMobil As JenisMobil
 
-<<<<<<< Updated upstream
-=======
-Public Class Jenis_Mobil
+    Public Class Jenis_Mobil
     Public Shared jenisMobil As New JenisMobil
     Public selectedJenis As Integer
     Public selectedJenisNama As String
->>>>>>> Stashed changes
-    Public Sub New()
+
+        Public Sub New()
 
         ' This call is required by the designer.
         InitializeComponent()
@@ -26,10 +24,7 @@ Public Class Jenis_Mobil
         reloadDataTableDatabase()
     End Sub
 
-
-<<<<<<< Updated upstream
-=======
-    Private Sub dataGridJenis_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridJenis.CellClick
+        Private Sub dataGridJenis_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridJenis.CellClick
         Dim index As Integer = e.RowIndex
         Dim selectedRow As DataGridViewRow
         selectedRow = dataGridJenis.Rows(index)
@@ -48,8 +43,7 @@ Public Class Jenis_Mobil
 
     End Sub
 
-    Private Sub Jenis_Mobil_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-        mainMenu.Show()
-    End Sub
->>>>>>> Stashed changes
-End Class
+        Private Sub Jenis_Mobil_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+            mainMenu.Show()
+        End Sub
+    End Class

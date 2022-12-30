@@ -27,14 +27,13 @@ Partial Class Form1
         '
         'Button1
         '
-<<<<<<< Updated upstream
         Me.Button1.Location = New System.Drawing.Point(393, 240)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(94, 29)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
-=======
+
         Me.loginBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.loginBtn.ForeColor = System.Drawing.Color.Black
         Me.loginBtn.Location = New System.Drawing.Point(220, 216)
@@ -43,18 +42,16 @@ Partial Class Form1
         Me.loginBtn.TabIndex = 4
         Me.loginBtn.Text = "Login"
         Me.loginBtn.UseVisualStyleBackColor = False
->>>>>>> Stashed changes
         '
         'Form1
         '
-<<<<<<< Updated upstream
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Button1)
         Me.Name = "Form1"
         Me.Text = "Form1"
-=======
+
         Me.tbPassword.Location = New System.Drawing.Point(106, 154)
         Me.tbPassword.Name = "tbPassword"
         Me.tbPassword.Size = New System.Drawing.Size(188, 23)
@@ -160,7 +157,7 @@ Partial Class Form1
         Me.Name = "SignIn"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Sign In"
->>>>>>> Stashed changes
+
         Me.ResumeLayout(False)
 
     End Sub
