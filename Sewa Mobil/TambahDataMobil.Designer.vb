@@ -23,7 +23,6 @@ Partial Class TambahDataMobil
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-
         Me.fotoMobil = New System.Windows.Forms.PictureBox()
         Me.tbJumlah = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -43,22 +42,19 @@ Partial Class TambahDataMobil
         Me.dtpTanggalMasuk = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1.SuspendLayout()
         CType(Me.fotoMobil, System.ComponentModel.ISupportInitialize).BeginInit()
-
         Me.SuspendLayout()
         '
         'GroupBox1
         '
-
         Me.GroupBox1.Controls.Add(Me.fotoMobil)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.GroupBox1.Location = New System.Drawing.Point(174, 12)
         Me.GroupBox1.Name = "GroupBox1"
-
+        Me.GroupBox1.Size = New System.Drawing.Size(117, 161)
         Me.GroupBox1.TabIndex = 21
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Add Your Picture Here"
         '
-
         'fotoMobil
         '
         Me.fotoMobil.Location = New System.Drawing.Point(6, 13)
@@ -73,14 +69,12 @@ Partial Class TambahDataMobil
         Me.tbJumlah.Name = "tbJumlah"
         Me.tbJumlah.Size = New System.Drawing.Size(188, 23)
         Me.tbJumlah.TabIndex = 20
-
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(29, 251)
         Me.Label2.Name = "Label2"
-
         Me.Label2.Size = New System.Drawing.Size(45, 15)
         Me.Label2.TabIndex = 19
         Me.Label2.Text = "Jumlah"
@@ -91,7 +85,6 @@ Partial Class TambahDataMobil
         Me.tbMerek.Name = "tbMerek"
         Me.tbMerek.Size = New System.Drawing.Size(188, 23)
         Me.tbMerek.TabIndex = 18
-
         '
         'Label1
         '
@@ -102,21 +95,18 @@ Partial Class TambahDataMobil
         Me.Label1.TabIndex = 17
         Me.Label1.Text = "Merek Mobil"
         '
-
         'tbHargaSewa
         '
         Me.tbHargaSewa.Location = New System.Drawing.Point(29, 333)
         Me.tbHargaSewa.Name = "tbHargaSewa"
         Me.tbHargaSewa.Size = New System.Drawing.Size(188, 23)
         Me.tbHargaSewa.TabIndex = 23
-
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(29, 315)
         Me.Label3.Name = "Label3"
-
         Me.Label3.Size = New System.Drawing.Size(69, 15)
         Me.Label3.TabIndex = 22
         Me.Label3.Text = "Harga Sewa"
@@ -127,25 +117,21 @@ Partial Class TambahDataMobil
         Me.tbTahunPembuatan.Name = "tbTahunPembuatan"
         Me.tbTahunPembuatan.Size = New System.Drawing.Size(188, 23)
         Me.tbTahunPembuatan.TabIndex = 27
-
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(254, 192)
         Me.Label5.Name = "Label5"
-
         Me.Label5.Size = New System.Drawing.Size(103, 15)
         Me.Label5.TabIndex = 26
         Me.Label5.Text = "Tahun Pembuatan"
-
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(254, 251)
         Me.Label6.Name = "Label6"
-
         Me.Label6.Size = New System.Drawing.Size(86, 15)
         Me.Label6.TabIndex = 28
         Me.Label6.Text = "Tanggal Masuk"
@@ -156,14 +142,12 @@ Partial Class TambahDataMobil
         Me.tbStatusSewa.Name = "tbStatusSewa"
         Me.tbStatusSewa.Size = New System.Drawing.Size(188, 23)
         Me.tbStatusSewa.TabIndex = 31
-
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(254, 315)
         Me.Label7.Name = "Label7"
-
         Me.Label7.Size = New System.Drawing.Size(69, 15)
         Me.Label7.TabIndex = 30
         Me.Label7.Text = "Status Sewa"
@@ -206,14 +190,12 @@ Partial Class TambahDataMobil
         Me.dtpTanggalMasuk.Name = "dtpTanggalMasuk"
         Me.dtpTanggalMasuk.Size = New System.Drawing.Size(188, 23)
         Me.dtpTanggalMasuk.TabIndex = 35
-
         '
         'TambahDataMobil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(472, 480)
-
         Me.Controls.Add(Me.dtpTanggalMasuk)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.cbJenis)
@@ -238,7 +220,6 @@ Partial Class TambahDataMobil
         Me.Text = "TambahDataMobil"
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.fotoMobil, System.ComponentModel.ISupportInitialize).EndInit()
-
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
