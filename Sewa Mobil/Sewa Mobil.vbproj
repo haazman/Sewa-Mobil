@@ -7,6 +7,7 @@
 
     <StartupObject>Sewa_Mobil.Form1</StartupObject>
 
+
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
     <UseWPF>False</UseWPF>

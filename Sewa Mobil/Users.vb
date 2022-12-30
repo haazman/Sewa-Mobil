@@ -15,26 +15,44 @@ Public Class Users
     Private password As String = ""
     Private database As String = "sewamobil"
 
-    Private TripleDes As New TripleDESCryptoServiceProvider
-    Public usersList As New ArrayList()
-    'Private username As String
-    'Private password As String
+    Private user As String
+    Private pass As String
+    Private foto As String
+    Private email As String
 
     Public Property GSusername() As String
         Get
-            Return username
+            Return user
         End Get
         Set(value As String)
-            username = value
+            user = value
         End Set
     End Property
 
     Public Property GSpassword() As String
         Get
-            Return password
+            Return pass
         End Get
         Set(value As String)
-            password = value
+            pass = value
+        End Set
+    End Property
+
+    Public Property GSfoto() As String
+        Get
+            Return foto
+        End Get
+        Set(value As String)
+            foto = value
+        End Set
+    End Property
+
+    Public Property GSEmail() As String
+        Get
+            Return email
+        End Get
+        Set(value As String)
+            email = value
         End Set
     End Property
 
@@ -42,35 +60,7 @@ Public Class Users
     Public Sub New()
 
     End Sub
-    Public Function EncryptData(ByVal plaintext As String) As String
-        'Convert the plaintext string to a byte array.
-        Dim plaintextBytes() As Byte = System.Text.Encoding.Unicode.GetBytes(plaintext)
-        'Create the stream.
-        Dim ms As New System.IO.MemoryStream
-        'Create the encoder To write To the stream.
-        Dim encStream As New CryptoStream(ms, TripleDes.CreateEncryptor(), System.Security.Cryptography.CryptoStreamMode.Write)
 
-        'Use the crypto stream To write the Byte array To the stream.
-        encStream.Write(plaintextBytes, 0, plaintextBytes.Length)
-        encStream.FlushFinalBlock()
-
-        'Convert the encrypted stream to a printable string.
-
-        Return Convert.ToBase64String(ms.ToArray)
-
-    End Function
-
-    Public Function CheckAuth(username As String, ByVal plainPassword As String) As String
-
-
-        For Each user In usersList
-            If String.Compare(username, user(0)) = 0 And String.Compare(EncryptData(plainPassword), user(1)) = 0 Then
-                Return True
-            End If
-        Next
-        Return False
-
-    End Function
 
     Public Function EncryptMD5(ByVal password As String)
         Dim x As New System.Security.Cryptography.MD5CryptoServiceProvider()
@@ -84,18 +74,18 @@ Public Class Users
         Return s.ToString()
     End Function
 
-    Public Function AddUsersDatabase(username_reg As String, password_reg As String)
+    Public Function AddUsersDatabase(username_reg As String, email_reg As String, password_reg As String, fotoUser As String)
         Try
-            Dim today = Date.Now()
 
             dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime=True"
             dbConn.Open()
 
             sqlCommand.Connection = dbConn
-            sqlQuery = "INSERT INTO users(username, password, registered_at) VALUE('" _
+            sqlQuery = "INSERT INTO user(user, email, password, foto) VALUE('" _
                 & username_reg & "', '" _
+                & email_reg & "', '" _
                 & EncryptMD5(password_reg) & "', '" _
-                & today.ToString("yyyy/MM/dd") & "')"
+                & fotoUser & "')"
 
             Debug.WriteLine(sqlQuery)
 
@@ -121,7 +111,7 @@ Public Class Users
 
             sqlCommand.Connection = dbConn
 
-            Dim queryAuth = "SELECT id_user, username FROM users WHERE username='" & username_login & "' AND password='" & EncryptMD5(password_login) & "'"
+            Dim queryAuth = "SELECT id, user FROM user WHERE user='" & username_login & "' AND password='" & EncryptMD5(password_login) & "'"
 
             sqlCommand.CommandText = queryAuth
             Debug.WriteLine(queryAuth)
