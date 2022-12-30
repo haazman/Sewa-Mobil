@@ -80,12 +80,14 @@ Partial Class SignUp
         '
         'signUpBtn
         '
-        Me.signUpBtn.Location = New System.Drawing.Point(131, 351)
+        Me.signUpBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.signUpBtn.Location = New System.Drawing.Point(197, 342)
         Me.signUpBtn.Name = "signUpBtn"
-        Me.signUpBtn.Size = New System.Drawing.Size(86, 26)
+        Me.signUpBtn.Size = New System.Drawing.Size(71, 25)
         Me.signUpBtn.TabIndex = 9
         Me.signUpBtn.Text = "Sign Up"
-        Me.signUpBtn.UseVisualStyleBackColor = True
+        Me.signUpBtn.UseVisualStyleBackColor = False
+
         '
         'tbEmail
         '
@@ -107,9 +109,11 @@ Partial Class SignUp
         '
         Me.GroupBox1.Controls.Add(Me.fotoUser)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.GroupBox1.Location = New System.Drawing.Point(125, 12)
+
+        Me.GroupBox1.Location = New System.Drawing.Point(125, 6)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(102, 124)
+        Me.GroupBox1.Size = New System.Drawing.Size(102, 134)
+
         Me.GroupBox1.TabIndex = 16
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Add Your Picture Here"
@@ -122,7 +126,9 @@ Partial Class SignUp
         '
         Me.backText.AutoSize = True
         Me.backText.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.backText.ForeColor = System.Drawing.SystemColors.Highlight
+
+        Me.backText.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+
         Me.backText.Location = New System.Drawing.Point(4, 7)
         Me.backText.Name = "backText"
         Me.backText.Size = New System.Drawing.Size(43, 15)
@@ -155,7 +161,13 @@ Partial Class SignUp
         Me.Controls.Add(Me.tbUsername)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.signUpBtn)
+
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "SignUp"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+
         Me.Text = "Sign Up"
         CType(Me.fotoUser, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
