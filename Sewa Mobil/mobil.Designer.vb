@@ -86,7 +86,13 @@ Partial Class mobil
         Me.Controls.Add(Me.addCarBtn)
         Me.Controls.Add(Me.DataGridMobil)
         Me.Controls.Add(Me.Label1)
+
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "mobil"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+
         Me.Text = "mobil"
         CType(Me.DataGridMobil, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

@@ -42,61 +42,87 @@ Partial Class mainMenu
         '
         'mobilBtn
         '
+
+        Me.mobilBtn.BackColor = System.Drawing.Color.SkyBlue
+
         Me.mobilBtn.Location = New System.Drawing.Point(118, 84)
         Me.mobilBtn.Name = "mobilBtn"
         Me.mobilBtn.Size = New System.Drawing.Size(145, 26)
         Me.mobilBtn.TabIndex = 1
         Me.mobilBtn.Text = "Mobil"
-        Me.mobilBtn.UseVisualStyleBackColor = True
+
+        Me.mobilBtn.UseVisualStyleBackColor = False
         '
         'jenisBtn
         '
+        Me.jenisBtn.BackColor = System.Drawing.Color.SkyBlue
+
         Me.jenisBtn.Location = New System.Drawing.Point(118, 140)
         Me.jenisBtn.Name = "jenisBtn"
         Me.jenisBtn.Size = New System.Drawing.Size(145, 26)
         Me.jenisBtn.TabIndex = 2
         Me.jenisBtn.Text = "Jenis Mobil"
-        Me.jenisBtn.UseVisualStyleBackColor = True
+
+        Me.jenisBtn.UseVisualStyleBackColor = False
         '
         'penyewaBtn
         '
+        Me.penyewaBtn.BackColor = System.Drawing.Color.SkyBlue
+
         Me.penyewaBtn.Location = New System.Drawing.Point(118, 199)
         Me.penyewaBtn.Name = "penyewaBtn"
         Me.penyewaBtn.Size = New System.Drawing.Size(145, 26)
         Me.penyewaBtn.TabIndex = 3
         Me.penyewaBtn.Text = "Penyewa"
-        Me.penyewaBtn.UseVisualStyleBackColor = True
+
+        Me.penyewaBtn.UseVisualStyleBackColor = False
         '
         'sewaBtn
         '
+        Me.sewaBtn.BackColor = System.Drawing.Color.SkyBlue
+
         Me.sewaBtn.Location = New System.Drawing.Point(118, 257)
         Me.sewaBtn.Name = "sewaBtn"
         Me.sewaBtn.Size = New System.Drawing.Size(145, 26)
         Me.sewaBtn.TabIndex = 4
         Me.sewaBtn.Text = "Sewa"
-        Me.sewaBtn.UseVisualStyleBackColor = True
+
+        Me.sewaBtn.UseVisualStyleBackColor = False
         '
         'logoutBtn
         '
+        Me.logoutBtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+
         Me.logoutBtn.Location = New System.Drawing.Point(12, 12)
         Me.logoutBtn.Name = "logoutBtn"
         Me.logoutBtn.Size = New System.Drawing.Size(60, 28)
         Me.logoutBtn.TabIndex = 5
         Me.logoutBtn.Text = "Log Out"
-        Me.logoutBtn.UseVisualStyleBackColor = True
+
+        Me.logoutBtn.UseVisualStyleBackColor = False
+
         '
         'mainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(374, 312)
+
+        Me.ControlBox = False
+
         Me.Controls.Add(Me.logoutBtn)
         Me.Controls.Add(Me.sewaBtn)
         Me.Controls.Add(Me.penyewaBtn)
         Me.Controls.Add(Me.jenisBtn)
         Me.Controls.Add(Me.mobilBtn)
         Me.Controls.Add(Me.Label1)
+
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "mainMenu"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+
         Me.Text = "mainMenu"
         Me.ResumeLayout(False)
         Me.PerformLayout()

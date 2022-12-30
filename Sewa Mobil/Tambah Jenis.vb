@@ -4,4 +4,10 @@
         Jenis_Mobil.jenisMobil.inputData(jenis)
         Me.Close()
     End Sub
+
+
+    Private Sub Tambah_Jenis_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        Jenis_Mobil.Show()
+    End Sub
+
 End Class

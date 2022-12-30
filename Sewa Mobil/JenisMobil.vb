@@ -8,7 +8,9 @@ Public Class JenisMobil
     Public Shared dbConn As New MySqlConnection
     Public Shared sqlCommand As New MySqlCommand
     Public Shared sqlRead As MySqlDataReader
+
     Public Shared sqlQuery As String
+
 
     Private server As String = "localhost"
     Private username As String = "root"
@@ -30,10 +32,12 @@ Public Class JenisMobil
 
         Dim result As New DataTable
 
+
         dbConn.ConnectionString = "server =" + server + ";" + "user id =" + username + ";" + "password =" + password + ";" + "database =" + database
         dbConn.Open()
         sqlCommand.Connection = dbConn
         sqlCommand.CommandText = "SELECT id as 'ID', jenis_mobil as 'Jenis Mobil', created_at AS 'Tanggal ditambahkan' FROM `jenis mobil`"
+
 
         sqlRead = sqlCommand.ExecuteReader
 
@@ -42,6 +46,7 @@ Public Class JenisMobil
         dbConn.Close()
         Return result
     End Function
+
 
     Public Function inputData(jenis As String)
         dbConn.ConnectionString = "server =" + server + ";" + "user id =" + username + ";" + "password =" + password + ";" + "database =" + database
@@ -87,4 +92,3 @@ Public Class JenisMobil
     End Function
 
 End Class
-

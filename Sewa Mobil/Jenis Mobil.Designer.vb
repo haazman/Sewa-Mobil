@@ -22,39 +22,59 @@ Partial Class Jenis_Mobil
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btnKurang = New System.Windows.Forms.Button()
-        Me.btnTambah = New System.Windows.Forms.Button()
+
+
         Me.dataGridJenis = New System.Windows.Forms.DataGridView()
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.jenis = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnTambah = New System.Windows.Forms.Button()
+        Me.btnKurang = New System.Windows.Forms.Button()
         CType(Me.dataGridJenis, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'btnKurang
-        '
-        Me.btnKurang.Location = New System.Drawing.Point(459, 313)
-        Me.btnKurang.Name = "btnKurang"
-        Me.btnKurang.Size = New System.Drawing.Size(171, 68)
-        Me.btnKurang.TabIndex = 5
-        Me.btnKurang.Text = "Kurang"
-        Me.btnKurang.UseVisualStyleBackColor = True
-        '
-        'btnTambah
-        '
-        Me.btnTambah.Location = New System.Drawing.Point(171, 313)
-        Me.btnTambah.Name = "btnTambah"
-        Me.btnTambah.Size = New System.Drawing.Size(171, 68)
-        Me.btnTambah.TabIndex = 4
-        Me.btnTambah.Text = "Tambah"
-        Me.btnTambah.UseVisualStyleBackColor = True
         '
         'dataGridJenis
         '
         Me.dataGridJenis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dataGridJenis.Location = New System.Drawing.Point(214, 69)
+        Me.dataGridJenis.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.jenis})
+        Me.dataGridJenis.Location = New System.Drawing.Point(221, 28)
         Me.dataGridJenis.Name = "dataGridJenis"
         Me.dataGridJenis.RowHeadersWidth = 51
         Me.dataGridJenis.RowTemplate.Height = 29
-        Me.dataGridJenis.Size = New System.Drawing.Size(390, 188)
-        Me.dataGridJenis.TabIndex = 3
+        Me.dataGridJenis.Size = New System.Drawing.Size(300, 188)
+        Me.dataGridJenis.TabIndex = 0
+        '
+        'id
+        '
+        Me.id.HeaderText = "ID"
+        Me.id.MinimumWidth = 6
+        Me.id.Name = "id"
+        Me.id.Width = 125
+        '
+        'jenis
+        '
+        Me.jenis.HeaderText = "Jenis"
+        Me.jenis.MinimumWidth = 6
+        Me.jenis.Name = "jenis"
+        Me.jenis.Width = 125
+        '
+        'btnTambah
+        '
+        Me.btnTambah.Location = New System.Drawing.Point(144, 272)
+        Me.btnTambah.Name = "btnTambah"
+        Me.btnTambah.Size = New System.Drawing.Size(171, 68)
+        Me.btnTambah.TabIndex = 1
+        Me.btnTambah.Text = "Tambah"
+        Me.btnTambah.UseVisualStyleBackColor = True
+        '
+        'btnKurang
+        '
+        Me.btnKurang.Location = New System.Drawing.Point(432, 272)
+        Me.btnKurang.Name = "btnKurang"
+        Me.btnKurang.Size = New System.Drawing.Size(171, 68)
+        Me.btnKurang.TabIndex = 2
+        Me.btnKurang.Text = "Kurang"
+        Me.btnKurang.UseVisualStyleBackColor = True
+
         '
         'Jenis_Mobil
         '
@@ -71,7 +91,11 @@ Partial Class Jenis_Mobil
 
     End Sub
 
-    Friend WithEvents btnKurang As Button
-    Friend WithEvents btnTambah As Button
+
     Friend WithEvents dataGridJenis As DataGridView
+    Friend WithEvents id As DataGridViewTextBoxColumn
+    Friend WithEvents jenis As DataGridViewTextBoxColumn
+    Friend WithEvents btnTambah As Button
+    Friend WithEvents btnKurang As Button
+
 End Class

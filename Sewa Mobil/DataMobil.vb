@@ -22,11 +22,13 @@ Public Class DataMobil
     Private password As String = ""
     Private database As String = "sewamobil"
 
-    Public Property GSjenis() As String
+
+    Public Property GSjenis() As Integer
         Get
             Return jenis
         End Get
-        Set(value As String)
+        Set(value As Integer)
+
             jenis = value
         End Set
     End Property
@@ -94,24 +96,7 @@ Public Class DataMobil
         End Set
     End Property
 
-    Public Function ConvertMobilToString(vals As List(Of String))
-        Dim builder As StringBuilder = New StringBuilder()
-        For Each val As String In vals
-            builder.Append(val).Append("|")
-        Next
 
-        'Convert to string
-        Dim res = builder.ToString()
-        Return res
-    End Function
-
-    Public Function ConvertStringToKMobil(value As String)
-        Dim arr() As String = value.Split("|")
-
-        'Convert to List
-        Dim vals As List(Of String) = arr.ToList()
-        Return vals
-    End Function
 
     Public Function GetDataMobilDatabase() As DataTable
         Dim result As New DataTable
@@ -119,16 +104,18 @@ Public Class DataMobil
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime=True"
         dbConn.Open()
         sqlCommand.Connection = dbConn
-        sqlCommand.CommandText = "SELECT 'id' AS 'ID',
-                                  'jenis' AS 'Jenis',
-                                  'foto_mobil' AS 'Foto Mobil',
-                                  'merek' AS 'Merek Mobil',
-                                  'jumlah' AS 'Jumlah',
-                                  'harga_sewa' AS 'Harga Sewa',
-                                  'tahun_penerbitan' AS 'Tahun Pembuatan',
-                                  'tanggal_data_masuk' AS 'Tanggal Masuk',
-                                  'status_sewa' AS 'Status'
-                                  FROM mobil"
+
+        sqlCommand.CommandText = "SELECT mobil.id AS 'ID',
+                                  jenis_mobil AS 'Jenis',
+                                  foto_mobil AS 'Foto Mobil',
+                                  merek AS 'Merek Mobil',
+                                  jumlah AS 'Jumlah',
+                                  harga_sewa AS 'Harga Sewa',
+                                  tahun_pembuatan AS 'Tahun Pembuatan',
+                                  tanggal_data_masuk AS 'Tanggal Masuk',
+                                  status_sewa AS 'Status'
+                                  FROM mobil INNER JOIN `jenis mobil` ON mobil.jenis = `jenis mobil`.id"
+
 
         sqlRead = sqlCommand.ExecuteReader
 
@@ -137,6 +124,7 @@ Public Class DataMobil
         dbConn.Close()
         Return result
     End Function
+
 
     Public Function AddDataKoleksiDatabase(
                                         jenis As String,
@@ -152,10 +140,10 @@ Public Class DataMobil
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "INSERT INTO KOLEKSI (nama_koleksi, dir_gambar,
-                        deskripsi, penerbit, jenis_koleksi,
-                        tahun_terbit, lokasi, tanggal_masuk_koleksi,
-                        stock, bahasa, kategori) VALUE('" _
+
+            sqlQuery = "INSERT INTO MOBIL (jenis, foto_mobil, merek, jumlah, harga_sewa, tahun_pembuatan, tanggal_data_masuk, status_sewa) 
+                        VALUE('" _
+
                         & jenis & "', '" _
                         & foto & "', '" _
                         & merek_mobil & "', '" _
@@ -186,20 +174,19 @@ Public Class DataMobil
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime = " + "True" + ";" + "Allow Zero Datetime = " + "True"
         dbConn.Open()
         sqlCommand.Connection = dbConn
-        sqlCommand.CommandText = "SELECT id_koleksi,
-                                  nama_koleksi ,
-                                  dir_gambar,
-                                  deskripsi,
-                                  penerbit,
-                                  jenis_koleksi,
-                                  tahun_terbit,
-                                  lokasi,
-                                  tanggal_masuk_koleksi,
-                                  stock,
-                                  bahasa,
-                                  kategori
-                                  FROM koleksi
-                                  WHERE id_koleksi='" & ID & "' "
+
+        sqlCommand.CommandText = "SELECT mobil.id,
+                                  jenis,
+                                  foto_mobil,
+                                  merek,
+                                  jumlah,
+                                  harga_sewa,
+                                  tahun_pembuatan,
+                                  tanggal_data_masuk,
+                                  status_sewa
+                                  FROM mobil INNER JOIN `jenis mobil` ON mobil.jenis = `jenis mobil`.id
+                                  WHERE mobil.id ='" & ID & "' "
+
         sqlRead = sqlCommand.ExecuteReader
 
         While sqlRead.Read
@@ -212,54 +199,53 @@ Public Class DataMobil
             result.Add(sqlRead.GetString(6).ToString())
             result.Add(sqlRead.GetString(7).ToString())
             result.Add(sqlRead.GetString(8).ToString())
-            result.Add(sqlRead.GetString(9).ToString())
-            result.Add(sqlRead.GetString(10).ToString())
-            result.Add(sqlRead.GetString(11).ToString())
+
         End While
 
         sqlRead.Close()
         dbConn.Close()
         Return result
-    End Function
 
-    Public Function UpdateDataKoleksiByIDDatabase(ID As Integer,
-                                        dir_gambar As String,
-                                        nama_koleksi As String,
-                                        jenis_koleksi As String,
-                                        penerbit_koleksi As String,
-                                        deskripsi_koleksi As String,
-                                        tahun_terbit As String,
-                                        lokasi_rak As String,
+    End Function  
+
+    Public Function UpdateDataMobilByIDDatabase(
+                                        id As Integer,
+                                        jenis As String,
+                                        foto As String,
+                                        merek_mobil As String,
+                                        jumlah_mobil As Integer,
+                                        harga_sewa_mobil As Decimal,
+                                        tahun_pembuatan As String,
                                         tanggal_masuk As Date,
-                                        stock_koleksi As Integer,
-                                        bahasa_koleksi As String,
-                                        kategori_koleksi As String)
-        tahun_terbit = tahun_terbit.ToString()
+                                        status_sewa As String
+                                        )
+
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "UPDATE KOLEKSI SET " &
-                        "nama_koleksi= '" & nama_koleksi & "',  " &
-                        "dir_gambar= '" & dir_gambar & "',  " &
-                        "deskripsi= '" & deskripsi_koleksi & "',  " &
-                        "penerbit= '" & penerbit_koleksi & "',  " &
-                        "jenis_koleksi= '" & jenis_koleksi & "',  " &
-                        "tahun_terbit= '" & tahun_terbit & "',  " &
-                        "lokasi= '" & lokasi_rak & "',  " &
-                        "tanggal_masuk_koleksi= '" & tanggal_masuk.ToString("yyyy/MM/dd") & "',  " &
-                        "stock= '" & stock_koleksi & "',  " &
-                        "bahasa= '" & bahasa_koleksi & "',  " &
-                        "kategori= '" & kategori_koleksi & "'  " &
-                        "WHERE id_koleksi= '" & ID & "'"
+
+            sqlQuery = "UPDATE mobil SET " &
+                        "jenis= '" & jenis & "',  " &
+                        "foto_mobil= '" & foto & "',  " &
+                        "merek= '" & merek_mobil & "',  " &
+                        "jumlah= '" & jumlah_mobil & "',  " &
+                        "harga_sewa= '" & harga_sewa_mobil & "',  " &
+                        "tahun_pembuatan= '" & tahun_pembuatan & "',  " &
+                        "tanggal_data_masuk= '" & tanggal_masuk.ToString("yyyy/MM/dd") & "',  " &
+                        "status_sewa= '" & status_sewa & "'  " &
+                        "WHERE mobil.id= '" & id & "'"
+
             Debug.Print(sqlQuery)
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
             dbConn.Close()
 
-            'FormPerpustakaan.SqlDt.Load(sqlRead)
+
             sqlRead.Close()
             dbConn.Close()
+
+
         Catch ex As Exception
             Return ex.Message
         Finally
@@ -268,15 +254,18 @@ Public Class DataMobil
 
     End Function
 
-    Public Function DeleteDataKoleksiByIDDatabase(ID As Integer)
+
+    Public Function DeleteDataMobilByIDDatabase(ID As Integer)
 
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database
 
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "DELETE FROM koleksi " &
-                "WHERE id_koleksi='" & ID & "'"
+
+            sqlQuery = "DELETE FROM mobil " &
+                "WHERE id='" & ID & "'"
+
 
             Debug.WriteLine(sqlQuery)
 

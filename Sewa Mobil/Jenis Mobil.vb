@@ -1,9 +1,15 @@
+
 ﻿Imports Org.BouncyCastle.Asn1.IsisMtt
 
+﻿Public Class Jenis_Mobil
+    Dim jenisMobil As JenisMobil
+
+
 Public Class Jenis_Mobil
-    Public Shared jenisMobil As JenisMobil
+    Public Shared jenisMobil As New JenisMobil
     Public selectedJenis As Integer
     Public selectedJenisNama As String
+
     Public Sub New()
 
         ' This call is required by the designer.
@@ -22,11 +28,13 @@ Public Class Jenis_Mobil
         reloadDataTableDatabase()
     End Sub
 
+
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
         Dim tambahJenis As Tambah_Jenis
         tambahJenis = New Tambah_Jenis()
         tambahJenis.Show()
     End Sub
+
 
     Private Sub dataGridJenis_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridJenis.CellClick
         Dim index As Integer = e.RowIndex
@@ -46,4 +54,10 @@ Public Class Jenis_Mobil
         End If
 
     End Sub
+
+
+    Private Sub Jenis_Mobil_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        mainMenu.Show()
+    End Sub
+
 End Class
