@@ -22,13 +22,11 @@ Public Class DataMobil
     Private password As String = ""
     Private database As String = "sewamobil"
 
-
     Public Property GSjenis() As Integer
         Get
             Return jenis
         End Get
         Set(value As Integer)
-
             jenis = value
         End Set
     End Property
@@ -96,15 +94,12 @@ Public Class DataMobil
         End Set
     End Property
 
-
-
     Public Function GetDataMobilDatabase() As DataTable
         Dim result As New DataTable
 
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime=True"
         dbConn.Open()
         sqlCommand.Connection = dbConn
-
         sqlCommand.CommandText = "SELECT mobil.id AS 'ID',
                                   jenis_mobil AS 'Jenis',
                                   foto_mobil AS 'Foto Mobil',
@@ -116,7 +111,6 @@ Public Class DataMobil
                                   status_sewa AS 'Status'
                                   FROM mobil INNER JOIN `jenis mobil` ON mobil.jenis = `jenis mobil`.id"
 
-
         sqlRead = sqlCommand.ExecuteReader
 
         result.Load(sqlRead)
@@ -124,6 +118,7 @@ Public Class DataMobil
         dbConn.Close()
         Return result
     End Function
+
 
 
     Public Function AddDataKoleksiDatabase(
@@ -140,10 +135,8 @@ Public Class DataMobil
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-
             sqlQuery = "INSERT INTO MOBIL (jenis, foto_mobil, merek, jumlah, harga_sewa, tahun_pembuatan, tanggal_data_masuk, status_sewa) 
                         VALUE('" _
-
                         & jenis & "', '" _
                         & foto & "', '" _
                         & merek_mobil & "', '" _
@@ -174,7 +167,6 @@ Public Class DataMobil
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime = " + "True" + ";" + "Allow Zero Datetime = " + "True"
         dbConn.Open()
         sqlCommand.Connection = dbConn
-
         sqlCommand.CommandText = "SELECT mobil.id,
                                   jenis,
                                   foto_mobil,
@@ -186,7 +178,6 @@ Public Class DataMobil
                                   status_sewa
                                   FROM mobil INNER JOIN `jenis mobil` ON mobil.jenis = `jenis mobil`.id
                                   WHERE mobil.id ='" & ID & "' "
-
         sqlRead = sqlCommand.ExecuteReader
 
         While sqlRead.Read
@@ -199,14 +190,12 @@ Public Class DataMobil
             result.Add(sqlRead.GetString(6).ToString())
             result.Add(sqlRead.GetString(7).ToString())
             result.Add(sqlRead.GetString(8).ToString())
-
         End While
 
         sqlRead.Close()
         dbConn.Close()
         Return result
-
-    End Function  
+    End Function
 
     Public Function UpdateDataMobilByIDDatabase(
                                         id As Integer,
@@ -219,12 +208,10 @@ Public Class DataMobil
                                         tanggal_masuk As Date,
                                         status_sewa As String
                                         )
-
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-
             sqlQuery = "UPDATE mobil SET " &
                         "jenis= '" & jenis & "',  " &
                         "foto_mobil= '" & foto & "',  " &
@@ -245,13 +232,11 @@ Public Class DataMobil
             sqlRead.Close()
             dbConn.Close()
 
-
         Catch ex As Exception
             Return ex.Message
         Finally
             dbConn.Dispose()
         End Try
-
     End Function
 
 
@@ -262,10 +247,8 @@ Public Class DataMobil
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-
             sqlQuery = "DELETE FROM mobil " &
                 "WHERE id='" & ID & "'"
-
 
             Debug.WriteLine(sqlQuery)
 

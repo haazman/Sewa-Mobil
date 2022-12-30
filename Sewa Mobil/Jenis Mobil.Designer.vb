@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Jenis_Mobil
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,13 +20,9 @@ Partial Class Jenis_Mobil
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-
-
         Me.dataGridJenis = New System.Windows.Forms.DataGridView()
-        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.jenis = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnTambah = New System.Windows.Forms.Button()
         Me.btnKurang = New System.Windows.Forms.Button()
         CType(Me.dataGridJenis, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -35,55 +31,43 @@ Partial Class Jenis_Mobil
         'dataGridJenis
         '
         Me.dataGridJenis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dataGridJenis.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.jenis})
-        Me.dataGridJenis.Location = New System.Drawing.Point(221, 28)
+        Me.dataGridJenis.Location = New System.Drawing.Point(144, 25)
+        Me.dataGridJenis.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dataGridJenis.Name = "dataGridJenis"
         Me.dataGridJenis.RowHeadersWidth = 51
         Me.dataGridJenis.RowTemplate.Height = 29
-        Me.dataGridJenis.Size = New System.Drawing.Size(300, 188)
+        Me.dataGridJenis.Size = New System.Drawing.Size(364, 154)
         Me.dataGridJenis.TabIndex = 0
-        '
-        'id
-        '
-        Me.id.HeaderText = "ID"
-        Me.id.MinimumWidth = 6
-        Me.id.Name = "id"
-        Me.id.Width = 125
-        '
-        'jenis
-        '
-        Me.jenis.HeaderText = "Jenis"
-        Me.jenis.MinimumWidth = 6
-        Me.jenis.Name = "jenis"
-        Me.jenis.Width = 125
         '
         'btnTambah
         '
-        Me.btnTambah.Location = New System.Drawing.Point(144, 272)
+        Me.btnTambah.Location = New System.Drawing.Point(144, 204)
+        Me.btnTambah.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnTambah.Name = "btnTambah"
-        Me.btnTambah.Size = New System.Drawing.Size(171, 68)
+        Me.btnTambah.Size = New System.Drawing.Size(150, 51)
         Me.btnTambah.TabIndex = 1
         Me.btnTambah.Text = "Tambah"
         Me.btnTambah.UseVisualStyleBackColor = True
         '
         'btnKurang
         '
-        Me.btnKurang.Location = New System.Drawing.Point(432, 272)
+        Me.btnKurang.Location = New System.Drawing.Point(358, 204)
+        Me.btnKurang.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnKurang.Name = "btnKurang"
-        Me.btnKurang.Size = New System.Drawing.Size(171, 68)
+        Me.btnKurang.Size = New System.Drawing.Size(150, 51)
         Me.btnKurang.TabIndex = 2
         Me.btnKurang.Text = "Kurang"
         Me.btnKurang.UseVisualStyleBackColor = True
-
         '
         'Jenis_Mobil
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(675, 302)
         Me.Controls.Add(Me.btnKurang)
         Me.Controls.Add(Me.btnTambah)
         Me.Controls.Add(Me.dataGridJenis)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Jenis_Mobil"
         Me.Text = "Jenis_Mobil"
         CType(Me.dataGridJenis, System.ComponentModel.ISupportInitialize).EndInit()
@@ -91,11 +75,7 @@ Partial Class Jenis_Mobil
 
     End Sub
 
-
     Friend WithEvents dataGridJenis As DataGridView
-    Friend WithEvents id As DataGridViewTextBoxColumn
-    Friend WithEvents jenis As DataGridViewTextBoxColumn
     Friend WithEvents btnTambah As Button
     Friend WithEvents btnKurang As Button
-
 End Class

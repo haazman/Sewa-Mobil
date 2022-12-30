@@ -1,11 +1,9 @@
-
-﻿Imports MySql.Data.MySqlClient
+Imports MySql.Data.MySqlClient
 
 Public Class mobil
     Public Shared DataMobil = New DataMobil()
     Public Shared selectedTableKoleksi
     Public Shared selectedTableKoleksiNama
-
     Private Sub mobil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -63,5 +61,4 @@ Public Class mobil
     Private Sub mobil_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         mainMenu.Show()
     End Sub
-
 End Class
