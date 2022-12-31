@@ -46,4 +46,9 @@ Public Class Jenis_Mobil
         End If
 
     End Sub
+
+    Private Sub Jenis_Mobil_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        Dim mainMenu = New mainMenu()
+        mainMenu.Show()
+    End Sub
 End Class

@@ -1,16 +1,16 @@
-﻿Public Class Hapus_jenis
+﻿Public Class Hapus_Penyewa
     Public Sub New()
 
         ' This call is required by the designer.
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-        lblNama.Text = Jenis_Mobil.selectedJenisNama + " ?"
-
+        lblHapus.Text = FormPenyewa.selectedNamaPenyewa + " ?"
     End Sub
 
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
-        Jenis_Mobil.jenisMobil.deleteData(Jenis_Mobil.selectedJenis)
+        Dim id = FormPenyewa.selectedPenyewa
+        FormPenyewa.penyewa.deleteData(id)
         Me.Close()
     End Sub
 End Class
