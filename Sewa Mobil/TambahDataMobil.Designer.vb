@@ -48,16 +48,16 @@ Partial Class TambahDataMobil
         '
         Me.GroupBox1.Controls.Add(Me.fotoMobil)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.GroupBox1.Location = New System.Drawing.Point(174, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(172, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(117, 161)
+        Me.GroupBox1.Size = New System.Drawing.Size(108, 155)
         Me.GroupBox1.TabIndex = 21
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Add Your Picture Here"
         '
         'fotoMobil
         '
-        Me.fotoMobil.Location = New System.Drawing.Point(6, 13)
+        Me.fotoMobil.Location = New System.Drawing.Point(1, 13)
         Me.fotoMobil.Name = "fotoMobil"
         Me.fotoMobil.Size = New System.Drawing.Size(105, 140)
         Me.fotoMobil.TabIndex = 0
