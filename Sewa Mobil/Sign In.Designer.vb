@@ -109,10 +109,11 @@ Partial Class SignIn
         'signUpText
         '
         Me.signUpText.AutoSize = True
+        Me.signUpText.BackColor = System.Drawing.Color.Transparent
         Me.signUpText.Cursor = System.Windows.Forms.Cursors.Hand
         Me.signUpText.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.signUpText.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.signUpText.Location = New System.Drawing.Point(129, 256)
+        Me.signUpText.Location = New System.Drawing.Point(126, 256)
         Me.signUpText.Name = "signUpText"
         Me.signUpText.Size = New System.Drawing.Size(48, 13)
         Me.signUpText.TabIndex = 13
