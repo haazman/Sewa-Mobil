@@ -37,7 +37,7 @@ Partial Class SignIn
         'loginBtn
         '
         Me.loginBtn.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.loginBtn.Location = New System.Drawing.Point(208, 207)
+        Me.loginBtn.Location = New System.Drawing.Point(208, 216)
         Me.loginBtn.Name = "loginBtn"
         Me.loginBtn.Size = New System.Drawing.Size(86, 29)
         Me.loginBtn.TabIndex = 4
