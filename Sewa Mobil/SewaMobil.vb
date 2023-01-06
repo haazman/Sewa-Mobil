@@ -20,7 +20,7 @@ Public Class SewaMobil
         dbConn.ConnectionString = "server =" + server + ";" + "user id =" + username + ";" + "password =" + password + ";" + "database =" + database
         dbConn.Open()
         sqlCommand.Connection = dbConn
-        sqlCommand.CommandText = "SELECT sewa.id, mobil.merek , penyewa.nama, rencana_pinjam, tanggal_pinjam,tanggal_kembali, total_biaya_sewa FROM sewa INNER JOIN `mobil` ON sewa.merek =`mobil`.id INNER JOIN penyewa ON sewa.penyewa = penyewa.id_penyewa"
+        sqlCommand.CommandText = "SELECT sewa.id as 'ID', mobil.merek as 'Merek Mobil', penyewa.nama 'Nama', rencana_pinjam 'Rencana Pinjam', tanggal_pinjam 'Tanggal Pinjam',tanggal_kembali 'Tanggal Kembali', total_biaya_sewa as 'Total Biaya',biaya_kelebihan_pinjam as 'Kembalian', total_bayar as 'Total Bayar', status_sewa as 'Status Sewa'  FROM sewa INNER JOIN `mobil` ON sewa.merek =`mobil`.id INNER JOIN penyewa ON sewa.penyewa = penyewa.id_penyewa"
 
         sqlRead = sqlCommand.ExecuteReader
 
@@ -33,20 +33,7 @@ Public Class SewaMobil
     Public Function inputData(merek As Integer, penyewa As Integer, rencanaPinjam As Integer, tanggalPinjam As String, tanggalKembali As String, statusSewa As String, total_bayar As Integer)
         dbConn.ConnectionString = "server =" + server + ";" + "user id =" + username + ";" + "password =" + password + ";" + "database =" + database
         Try
-            dbConn.Open()
-            sqlCommand.Connection = dbConn
-            sqlQuery = "SELECT harga_sewa from mobil where id = '" & merek & "'"
-            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
-            sqlRead = sqlCommand.ExecuteReader
-            Dim harga_sewa
-            While sqlRead.Read()
-                harga_sewa = sqlRead.GetString(0)
-            End While
-            dbConn.Close()
-            MessageBox.Show(harga_sewa)
-            sqlRead.Close()
-            dbConn.Close()
-
+            Dim harga As String = getHargaMobil(merek)
             dbConn.Open()
             sqlCommand.Connection = dbConn
             sqlQuery = "insert into sewa (merek, penyewa,rencana_pinjam,tanggal_pinjam,tanggal_kembali, total_biaya_sewa,biaya_kelebihan_pinjam, total_bayar, status_sewa) value('" & merek & "','" & penyewa & "','" & rencanaPinjam & "','" & tanggalPinjam & "','" & tanggalKembali & "','" & total_bayar & "')"
@@ -57,6 +44,33 @@ Public Class SewaMobil
             sqlRead.Close()
             dbConn.Close()
 
+
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+
+    End Function
+
+
+    Public Function getHargaMobil(merek As String)
+        dbConn.ConnectionString = "server =" + server + ";" + "user id =" + username + ";" + "password =" + password + ";" + "database =" + database
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "SELECT harga_sewa from mobil where id = '" & merek & "'"
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            Dim harga_sewa
+            While sqlRead.Read()
+                harga_sewa = sqlRead.GetString(0)
+            End While
+            dbConn.Close()
+            Return harga_sewa
+
+            sqlRead.Close()
+            dbConn.Close()
 
         Catch ex As Exception
             Return ex.Message

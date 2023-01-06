@@ -40,6 +40,8 @@ Partial Class TambahSewa
         Me.GroupBox = New System.Windows.Forms.GroupBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtbayar = New System.Windows.Forms.NumericUpDown()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.lblBiaya = New System.Windows.Forms.Label()
         CType(Me.numRencana, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox.SuspendLayout()
         CType(Me.txtbayar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -200,7 +202,7 @@ Partial Class TambahSewa
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label8.Location = New System.Drawing.Point(41, 475)
+        Me.Label8.Location = New System.Drawing.Point(41, 496)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(89, 21)
         Me.Label8.TabIndex = 20
@@ -208,16 +210,38 @@ Partial Class TambahSewa
         '
         'txtbayar
         '
-        Me.txtbayar.Location = New System.Drawing.Point(214, 478)
+        Me.txtbayar.Location = New System.Drawing.Point(214, 499)
         Me.txtbayar.Name = "txtbayar"
         Me.txtbayar.Size = New System.Drawing.Size(208, 23)
         Me.txtbayar.TabIndex = 21
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label9.Location = New System.Drawing.Point(41, 466)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(87, 21)
+        Me.Label9.TabIndex = 22
+        Me.Label9.Text = "Total Biaya"
+        '
+        'lblBiaya
+        '
+        Me.lblBiaya.AutoSize = True
+        Me.lblBiaya.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.lblBiaya.Location = New System.Drawing.Point(214, 466)
+        Me.lblBiaya.Name = "lblBiaya"
+        Me.lblBiaya.Size = New System.Drawing.Size(48, 21)
+        Me.lblBiaya.TabIndex = 23
+        Me.lblBiaya.Text = "Biaya"
         '
         'TambahSewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(489, 569)
+        Me.ClientSize = New System.Drawing.Size(489, 582)
+        Me.Controls.Add(Me.lblBiaya)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.txtbayar)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.numRencana)
@@ -263,4 +287,6 @@ Partial Class TambahSewa
     Friend WithEvents GroupBox As GroupBox
     Friend WithEvents Label8 As Label
     Friend WithEvents txtbayar As NumericUpDown
+    Friend WithEvents Label9 As Label
+    Friend WithEvents lblBiaya As Label
 End Class

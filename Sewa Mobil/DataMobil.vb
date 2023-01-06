@@ -106,8 +106,7 @@ Public Class DataMobil
                                   merek AS 'Merek Mobil',
                                   harga_sewa AS 'Harga Sewa',
                                   tahun_pembuatan AS 'Tahun Pembuatan',
-                                  tanggal_data_masuk AS 'Tanggal Masuk',
-                                  status_sewa AS 'Status'
+                                  tanggal_data_masuk AS 'Tanggal Masuk'
                                   FROM mobil INNER JOIN `jenis mobil` ON mobil.jenis = `jenis mobil`.id"
 
         sqlRead = sqlCommand.ExecuteReader
