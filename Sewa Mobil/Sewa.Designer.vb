@@ -80,7 +80,7 @@ Partial Class Sewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(641, 423)
+        Me.ClientSize = New System.Drawing.Size(641, 441)
         Me.Controls.Add(Me.deleteCarBtn)
         Me.Controls.Add(Me.editCarBtn)
         Me.Controls.Add(Me.addCarBtn)
