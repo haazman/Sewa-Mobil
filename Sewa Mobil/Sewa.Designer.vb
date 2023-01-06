@@ -22,22 +22,22 @@ Partial Class Sewa
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.DataGridMobil = New System.Windows.Forms.DataGridView()
+        Me.DataGridSewa = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.deleteCarBtn = New System.Windows.Forms.Button()
-        Me.editCarBtn = New System.Windows.Forms.Button()
-        Me.addCarBtn = New System.Windows.Forms.Button()
-        CType(Me.DataGridMobil, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btndeletesewa = New System.Windows.Forms.Button()
+        Me.btneditsewa = New System.Windows.Forms.Button()
+        Me.btntambahsewa = New System.Windows.Forms.Button()
+        CType(Me.DataGridSewa, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridMobil
+        'DataGridSewa
         '
-        Me.DataGridMobil.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridMobil.Location = New System.Drawing.Point(1, 80)
-        Me.DataGridMobil.Name = "DataGridMobil"
-        Me.DataGridMobil.RowTemplate.Height = 25
-        Me.DataGridMobil.Size = New System.Drawing.Size(638, 278)
-        Me.DataGridMobil.TabIndex = 2
+        Me.DataGridSewa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridSewa.Location = New System.Drawing.Point(1, 80)
+        Me.DataGridSewa.Name = "DataGridSewa"
+        Me.DataGridSewa.RowTemplate.Height = 25
+        Me.DataGridSewa.Size = New System.Drawing.Size(638, 278)
+        Me.DataGridSewa.TabIndex = 2
         '
         'Label1
         '
@@ -49,54 +49,54 @@ Partial Class Sewa
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Sewa"
         '
-        'deleteCarBtn
+        'btndeletesewa
         '
-        Me.deleteCarBtn.Location = New System.Drawing.Point(156, 391)
-        Me.deleteCarBtn.Name = "deleteCarBtn"
-        Me.deleteCarBtn.Size = New System.Drawing.Size(87, 31)
-        Me.deleteCarBtn.TabIndex = 7
-        Me.deleteCarBtn.Text = "Delete"
-        Me.deleteCarBtn.UseVisualStyleBackColor = True
+        Me.btndeletesewa.Location = New System.Drawing.Point(156, 391)
+        Me.btndeletesewa.Name = "btndeletesewa"
+        Me.btndeletesewa.Size = New System.Drawing.Size(87, 31)
+        Me.btndeletesewa.TabIndex = 7
+        Me.btndeletesewa.Text = "Delete"
+        Me.btndeletesewa.UseVisualStyleBackColor = True
         '
-        'editCarBtn
+        'btneditsewa
         '
-        Me.editCarBtn.Location = New System.Drawing.Point(281, 391)
-        Me.editCarBtn.Name = "editCarBtn"
-        Me.editCarBtn.Size = New System.Drawing.Size(87, 31)
-        Me.editCarBtn.TabIndex = 6
-        Me.editCarBtn.Text = "Edit"
-        Me.editCarBtn.UseVisualStyleBackColor = True
+        Me.btneditsewa.Location = New System.Drawing.Point(281, 391)
+        Me.btneditsewa.Name = "btneditsewa"
+        Me.btneditsewa.Size = New System.Drawing.Size(87, 31)
+        Me.btneditsewa.TabIndex = 6
+        Me.btneditsewa.Text = "Edit"
+        Me.btneditsewa.UseVisualStyleBackColor = True
         '
-        'addCarBtn
+        'btntambahsewa
         '
-        Me.addCarBtn.Location = New System.Drawing.Point(406, 391)
-        Me.addCarBtn.Name = "addCarBtn"
-        Me.addCarBtn.Size = New System.Drawing.Size(87, 31)
-        Me.addCarBtn.TabIndex = 5
-        Me.addCarBtn.Text = "Add"
-        Me.addCarBtn.UseVisualStyleBackColor = True
+        Me.btntambahsewa.Location = New System.Drawing.Point(406, 391)
+        Me.btntambahsewa.Name = "btntambahsewa"
+        Me.btntambahsewa.Size = New System.Drawing.Size(87, 31)
+        Me.btntambahsewa.TabIndex = 5
+        Me.btntambahsewa.Text = "Add"
+        Me.btntambahsewa.UseVisualStyleBackColor = True
         '
         'Sewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(641, 441)
-        Me.Controls.Add(Me.deleteCarBtn)
-        Me.Controls.Add(Me.editCarBtn)
-        Me.Controls.Add(Me.addCarBtn)
+        Me.Controls.Add(Me.btndeletesewa)
+        Me.Controls.Add(Me.btneditsewa)
+        Me.Controls.Add(Me.btntambahsewa)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.DataGridMobil)
+        Me.Controls.Add(Me.DataGridSewa)
         Me.Name = "Sewa"
         Me.Text = "Sewa"
-        CType(Me.DataGridMobil, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridSewa, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents DataGridMobil As DataGridView
+    Friend WithEvents DataGridSewa As DataGridView
     Friend WithEvents Label1 As Label
-    Friend WithEvents deleteCarBtn As Button
-    Friend WithEvents editCarBtn As Button
-    Friend WithEvents addCarBtn As Button
+    Friend WithEvents btndeletesewa As Button
+    Friend WithEvents btneditsewa As Button
+    Friend WithEvents btntambahsewa As Button
 End Class
