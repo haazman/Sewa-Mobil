@@ -1,9 +1,19 @@
 Imports MySql.Data.MySqlClient
 
 Public Class mobil
-    Public Shared DataMobil = New DataMobil()
+    Public Shared DataMobil As New DataMobil
     Public Shared selectedTableKoleksi
     Public Shared selectedTableKoleksiNama
+
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        DataMobil = New DataMobil()
+    End Sub
+
     Private Sub mobil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub

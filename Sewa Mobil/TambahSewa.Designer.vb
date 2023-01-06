@@ -27,13 +27,22 @@ Partial Class TambahSewa
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.txtrencana = New System.Windows.Forms.TextBox()
         Me.datepinjam = New System.Windows.Forms.DateTimePicker()
         Me.datekembali = New System.Windows.Forms.DateTimePicker()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btntambah = New System.Windows.Forms.Button()
         Me.cbpenyewa = New System.Windows.Forms.ComboBox()
         Me.cbmerk = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.numRencana = New System.Windows.Forms.NumericUpDown()
+        Me.rbtersedia = New System.Windows.Forms.RadioButton()
+        Me.rbtidaktersedia = New System.Windows.Forms.RadioButton()
+        Me.GroupBox = New System.Windows.Forms.GroupBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtbayar = New System.Windows.Forms.NumericUpDown()
+        CType(Me.numRencana, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox.SuspendLayout()
+        CType(Me.txtbayar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -86,13 +95,6 @@ Partial Class TambahSewa
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Tanggal Kembali"
         '
-        'txtrencana
-        '
-        Me.txtrencana.Location = New System.Drawing.Point(214, 198)
-        Me.txtrencana.Name = "txtrencana"
-        Me.txtrencana.Size = New System.Drawing.Size(208, 23)
-        Me.txtrencana.TabIndex = 7
-        '
         'datepinjam
         '
         Me.datepinjam.Location = New System.Drawing.Point(214, 256)
@@ -119,7 +121,7 @@ Partial Class TambahSewa
         '
         'btntambah
         '
-        Me.btntambah.Location = New System.Drawing.Point(347, 358)
+        Me.btntambah.Location = New System.Drawing.Point(339, 528)
         Me.btntambah.Name = "btntambah"
         Me.btntambah.Size = New System.Drawing.Size(75, 23)
         Me.btntambah.TabIndex = 11
@@ -142,25 +144,102 @@ Partial Class TambahSewa
         Me.cbmerk.Size = New System.Drawing.Size(208, 23)
         Me.cbmerk.TabIndex = 13
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label7.Location = New System.Drawing.Point(33, 357)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(97, 21)
+        Me.Label7.TabIndex = 14
+        Me.Label7.Text = "Status Sewa"
+        '
+        'numRencana
+        '
+        Me.numRencana.Location = New System.Drawing.Point(214, 198)
+        Me.numRencana.Name = "numRencana"
+        Me.numRencana.Size = New System.Drawing.Size(208, 23)
+        Me.numRencana.TabIndex = 16
+        '
+        'rbtersedia
+        '
+        Me.rbtersedia.AutoSize = True
+        Me.rbtersedia.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.rbtersedia.Location = New System.Drawing.Point(15, 22)
+        Me.rbtersedia.Name = "rbtersedia"
+        Me.rbtersedia.Size = New System.Drawing.Size(68, 19)
+        Me.rbtersedia.TabIndex = 17
+        Me.rbtersedia.TabStop = True
+        Me.rbtersedia.Text = "Tersedia"
+        Me.rbtersedia.UseVisualStyleBackColor = True
+        '
+        'rbtidaktersedia
+        '
+        Me.rbtidaktersedia.AutoSize = True
+        Me.rbtidaktersedia.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.rbtidaktersedia.Location = New System.Drawing.Point(15, 47)
+        Me.rbtidaktersedia.Name = "rbtidaktersedia"
+        Me.rbtidaktersedia.Size = New System.Drawing.Size(100, 19)
+        Me.rbtidaktersedia.TabIndex = 18
+        Me.rbtidaktersedia.TabStop = True
+        Me.rbtidaktersedia.Text = "Tidak Tersedia"
+        Me.rbtidaktersedia.UseVisualStyleBackColor = True
+        '
+        'GroupBox
+        '
+        Me.GroupBox.Controls.Add(Me.rbtidaktersedia)
+        Me.GroupBox.Controls.Add(Me.rbtersedia)
+        Me.GroupBox.Location = New System.Drawing.Point(214, 357)
+        Me.GroupBox.Name = "GroupBox"
+        Me.GroupBox.Size = New System.Drawing.Size(200, 100)
+        Me.GroupBox.TabIndex = 19
+        Me.GroupBox.TabStop = False
+        Me.GroupBox.Text = "Status"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label8.Location = New System.Drawing.Point(41, 475)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(89, 21)
+        Me.Label8.TabIndex = 20
+        Me.Label8.Text = "Total Bayar"
+        '
+        'txtbayar
+        '
+        Me.txtbayar.Location = New System.Drawing.Point(214, 478)
+        Me.txtbayar.Name = "txtbayar"
+        Me.txtbayar.Size = New System.Drawing.Size(208, 23)
+        Me.txtbayar.TabIndex = 21
+        '
         'TambahSewa
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(489, 404)
+        Me.ClientSize = New System.Drawing.Size(489, 569)
+        Me.Controls.Add(Me.txtbayar)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.numRencana)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.cbmerk)
         Me.Controls.Add(Me.cbpenyewa)
         Me.Controls.Add(Me.btntambah)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.datekembali)
         Me.Controls.Add(Me.datepinjam)
-        Me.Controls.Add(Me.txtrencana)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.GroupBox)
         Me.Name = "TambahSewa"
         Me.Text = "v"
+        CType(Me.numRencana, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox.ResumeLayout(False)
+        Me.GroupBox.PerformLayout()
+        CType(Me.txtbayar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -171,11 +250,17 @@ Partial Class TambahSewa
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents txtrencana As TextBox
     Friend WithEvents datepinjam As DateTimePicker
     Friend WithEvents datekembali As DateTimePicker
     Friend WithEvents Label6 As Label
     Friend WithEvents btntambah As Button
     Friend WithEvents cbpenyewa As ComboBox
     Friend WithEvents cbmerk As ComboBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents numRencana As NumericUpDown
+    Friend WithEvents rbtersedia As RadioButton
+    Friend WithEvents rbtidaktersedia As RadioButton
+    Friend WithEvents GroupBox As GroupBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents txtbayar As NumericUpDown
 End Class

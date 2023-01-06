@@ -104,7 +104,6 @@ Public Class DataMobil
                                   jenis_mobil AS 'Jenis',
                                   foto_mobil AS 'Foto Mobil',
                                   merek AS 'Merek Mobil',
-                                  jumlah AS 'Jumlah',
                                   harga_sewa AS 'Harga Sewa',
                                   tahun_pembuatan AS 'Tahun Pembuatan',
                                   tanggal_data_masuk AS 'Tanggal Masuk',

@@ -19,4 +19,9 @@
     Public Sub reloadDataTableDatabase()
         DataGridSewa.DataSource = sewa.getDataKoleksiDatabase()
     End Sub
+
+    Private Sub btntambahsewa_Click(sender As Object, e As EventArgs) Handles btntambahsewa.Click
+        Dim tambahSewa = New TambahSewa()
+        tambahSewa.Show()
+    End Sub
 End Class

@@ -29,4 +29,41 @@ Public Class SewaMobil
         dbConn.Close()
         Return result
     End Function
+
+    Public Function inputData(merek As Integer, penyewa As Integer, rencanaPinjam As Integer, tanggalPinjam As String, tanggalKembali As String, statusSewa As String, total_bayar As Integer)
+        dbConn.ConnectionString = "server =" + server + ";" + "user id =" + username + ";" + "password =" + password + ";" + "database =" + database
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "SELECT harga_sewa from mobil where id = '" & merek & "'"
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            Dim harga_sewa
+            While sqlRead.Read()
+                harga_sewa = sqlRead.GetString(0)
+            End While
+            dbConn.Close()
+            MessageBox.Show(harga_sewa)
+            sqlRead.Close()
+            dbConn.Close()
+
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "insert into sewa (merek, penyewa,rencana_pinjam,tanggal_pinjam,tanggal_kembali, total_biaya_sewa,biaya_kelebihan_pinjam, total_bayar, status_sewa) value('" & merek & "','" & penyewa & "','" & rencanaPinjam & "','" & tanggalPinjam & "','" & tanggalKembali & "','" & total_bayar & "')"
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            dbConn.Close()
+
+            sqlRead.Close()
+            dbConn.Close()
+
+
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+
+    End Function
+
 End Class
