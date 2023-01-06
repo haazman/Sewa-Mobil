@@ -36,12 +36,13 @@ Partial Class SignIn
         '
         'loginBtn
         '
-        Me.loginBtn.Location = New System.Drawing.Point(208, 207)
+        Me.loginBtn.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.loginBtn.Location = New System.Drawing.Point(208, 220)
         Me.loginBtn.Name = "loginBtn"
         Me.loginBtn.Size = New System.Drawing.Size(86, 29)
         Me.loginBtn.TabIndex = 4
         Me.loginBtn.Text = "Log In"
-        Me.loginBtn.UseVisualStyleBackColor = True
+        Me.loginBtn.UseVisualStyleBackColor = False
         '
         'tbPassword
         '
@@ -108,10 +109,11 @@ Partial Class SignIn
         'signUpText
         '
         Me.signUpText.AutoSize = True
+        Me.signUpText.BackColor = System.Drawing.Color.Transparent
         Me.signUpText.Cursor = System.Windows.Forms.Cursors.Hand
         Me.signUpText.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point)
         Me.signUpText.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.signUpText.Location = New System.Drawing.Point(129, 256)
+        Me.signUpText.Location = New System.Drawing.Point(126, 256)
         Me.signUpText.Name = "signUpText"
         Me.signUpText.Size = New System.Drawing.Size(48, 13)
         Me.signUpText.TabIndex = 13
@@ -143,8 +145,12 @@ Partial Class SignIn
         Me.Controls.Add(Me.tbUsername)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.loginBtn)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "SignIn"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Sign In"
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -89,4 +89,3 @@ Public Class JenisMobil
     End Function
 
 End Class
-

@@ -13,4 +13,10 @@
         Jenis_Mobil.jenisMobil.deleteData(Jenis_Mobil.selectedJenis)
         Me.Close()
     End Sub
+
+
+    Private Sub Hapus_jenis_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        Jenis_Mobil.Show()
+    End Sub
+
 End Class

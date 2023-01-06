@@ -1,7 +1,7 @@
-﻿Imports Org.BouncyCastle.Asn1.IsisMtt
+Imports Org.BouncyCastle.Asn1.IsisMtt
 
 Public Class Jenis_Mobil
-    Public Shared jenisMobil As JenisMobil
+    Public Shared jenisMobil As New JenisMobil()
     Public selectedJenis As Integer
     Public selectedJenisNama As String
     Public Sub New()
@@ -45,6 +45,10 @@ Public Class Jenis_Mobil
             MessageBox.Show("Dipilih Dulu Kak")
         End If
 
+    End Sub
+
+    Private Sub Jenis_Mobil_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        mainMenu.Show()
     End Sub
 
     Private Sub Jenis_Mobil_Closed(sender As Object, e As EventArgs) Handles Me.Closed

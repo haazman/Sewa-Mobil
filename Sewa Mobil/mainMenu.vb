@@ -6,15 +6,16 @@
 
     End Sub
 
-    Private Sub jenisBtn_Click(sender As Object, e As EventArgs) Handles jenisBtn.Click
-        Dim jenisMobil = New Jenis_Mobil()
-        jenisMobil.Show()
+
+    Private Sub mobilBtn_Click(sender As Object, e As EventArgs) Handles mobilBtn.Click
         Me.Hide()
+
+        mobil.Show()
     End Sub
 
-    Private Sub penyewaBtn_Click(sender As Object, e As EventArgs) Handles penyewaBtn.Click
-        Dim penyewa = New FormPenyewa()
-        penyewa.Show()
+    Private Sub jenisBtn_Click(sender As Object, e As EventArgs) Handles jenisBtn.Click
         Me.Hide()
+        Jenis_Mobil.Show()
     End Sub
+
 End Class
