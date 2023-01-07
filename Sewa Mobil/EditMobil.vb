@@ -12,8 +12,6 @@
         dtpTanggalMasuk.CustomFormat = "yyyy/MM/dd"
         tbMerek.Text = mobil.DataMobil.GSmerek
         tbHargaSewa.Text = mobil.DataMobil.GSharga
-        tbJumlah.Text = mobil.DataMobil.GSjumlah
-        tbStatusSewa.Text = mobil.DataMobil.GSstatus
         tbTahunPembuatan.Text = mobil.DataMobil.GStahun
 
         GetDataJenis()
@@ -31,17 +29,14 @@
     Private Sub editCarBtn_Click(sender As Object, e As EventArgs) Handles editCarBtn.Click
         mobil.DataMobil.GSjenis = Integer.Parse(cbJenis.SelectedValue)
         mobil.DataMobil.GSmerek = tbMerek.Text.ToString()
-        mobil.DataMobil.GSjumlah = Integer.Parse(tbJumlah.Text)
         mobil.DataMobil.GSharga = Double.Parse(tbHargaSewa.Text)
         mobil.DataMobil.GStahun = Integer.Parse(tbTahunPembuatan.Text)
         mobil.DataMobil.GStanggal = dtpTanggalMasuk.Value.ToString("yyyy/MM/dd")
-        mobil.DataMobil.GSstatus = tbStatusSewa.Text.ToString()
 
         If (tbTahunPembuatan.Text >= 1901) Then
             mobil.DataMobil.UpdateDataMobilByIDDatabase(mobil.selectedTableKoleksi, mobil.DataMobil.GSjenis, mobil.DataMobil.GSfoto,
-                                             mobil.DataMobil.GSmerek, mobil.DataMobil.GSjumlah, mobil.DataMobil.GSharga,
-                                             mobil.DataMobil.GStahun, mobil.DataMobil.GStanggal,
-                                             mobil.DataMobil.GSstatus)
+                                             mobil.DataMobil.GSmerek, mobil.DataMobil.GSharga,
+                                             mobil.DataMobil.GStahun, mobil.DataMobil.GStanggal)
             Me.Close()
             mobil.Show()
         Else
@@ -51,5 +46,16 @@
 
     Private Sub EditMobil_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         mobil.Show()
+    End Sub
+
+    Private Sub fotoMobil_Click(sender As Object, e As EventArgs) Handles fotoMobil.Click
+        OpenFileDialog1.Title = "Upload Foto"
+        OpenFileDialog1.Filter = "Image|*.bmp|Image JPG|*.JPG|Image JPEG|*.jpeg|Image PNG|*.png|Image GIF|*.gif|All Format|*.*"
+        OpenFileDialog1.ShowDialog()
+
+        fotoMobil.Load(OpenFileDialog1.FileName)
+        fotoMobil.SizeMode = PictureBoxSizeMode.StretchImage
+        mobil.DataMobil.GSfoto = OpenFileDialog1.FileName.ToString()
+        mobil.DataMobil.GSfoto = mobil.DataMobil.GSfoto.Replace("\", "/")
     End Sub
 End Class

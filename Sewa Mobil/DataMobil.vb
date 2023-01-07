@@ -49,14 +49,6 @@ Public Class DataMobil
         End Set
     End Property
 
-    Public Property GSjumlah() As Integer
-        Get
-            Return jumlah
-        End Get
-        Set(value As Integer)
-            jumlah = value
-        End Set
-    End Property
 
     Public Property GSharga() As Decimal
         Get
@@ -85,14 +77,6 @@ Public Class DataMobil
         End Set
     End Property
 
-    Public Property GSstatus() As String
-        Get
-            Return status_sewa
-        End Get
-        Set(value As String)
-            status_sewa = value
-        End Set
-    End Property
 
     Public Function GetDataMobilDatabase() As DataTable
         Dim result As New DataTable
@@ -104,11 +88,9 @@ Public Class DataMobil
                                   jenis_mobil AS 'Jenis',
                                   foto_mobil AS 'Foto Mobil',
                                   merek AS 'Merek Mobil',
-                                  jumlah AS 'Jumlah',
                                   harga_sewa AS 'Harga Sewa',
                                   tahun_pembuatan AS 'Tahun Pembuatan',
-                                  tanggal_data_masuk AS 'Tanggal Masuk',
-                                  status_sewa AS 'Status'
+                                  tanggal_data_masuk AS 'Tanggal Masuk'
                                   FROM mobil INNER JOIN `jenis mobil` ON mobil.jenis = `jenis mobil`.id"
 
         sqlRead = sqlCommand.ExecuteReader
@@ -125,26 +107,22 @@ Public Class DataMobil
                                         jenis As String,
                                         foto As String,
                                         merek_mobil As String,
-                                        jumlah_mobil As Integer,
                                         harga_sewa_mobil As Decimal,
                                         tahun_pembuatan As String,
-                                        tanggal_masuk As Date,
-                                        status_sewa As String
+                                        tanggal_masuk As Date
                                         )
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database
         Try
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "INSERT INTO MOBIL (jenis, foto_mobil, merek, jumlah, harga_sewa, tahun_pembuatan, tanggal_data_masuk, status_sewa) 
+            sqlQuery = "INSERT INTO MOBIL (jenis, foto_mobil, merek, harga_sewa, tahun_pembuatan, tanggal_data_masuk) 
                         VALUE('" _
                         & jenis & "', '" _
                         & foto & "', '" _
                         & merek_mobil & "', '" _
-                        & jumlah_mobil & "', '" _
                         & harga_sewa_mobil & "',  '" _
                         & tahun_pembuatan & "', '" _
-                        & tanggal_masuk.ToString("yyyy/MM/dd") & "', '" _
-                        & status_sewa & "')"
+                        & tanggal_masuk.ToString("yyyy/MM/dd") & "')"
 
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
@@ -171,11 +149,9 @@ Public Class DataMobil
                                   jenis,
                                   foto_mobil,
                                   merek,
-                                  jumlah,
                                   harga_sewa,
                                   tahun_pembuatan,
-                                  tanggal_data_masuk,
-                                  status_sewa
+                                  tanggal_data_masuk
                                   FROM mobil INNER JOIN `jenis mobil` ON mobil.jenis = `jenis mobil`.id
                                   WHERE mobil.id ='" & ID & "' "
         sqlRead = sqlCommand.ExecuteReader
@@ -188,8 +164,6 @@ Public Class DataMobil
             result.Add(sqlRead.GetString(4).ToString())
             result.Add(sqlRead.GetString(5).ToString())
             result.Add(sqlRead.GetString(6).ToString())
-            result.Add(sqlRead.GetString(7).ToString())
-            result.Add(sqlRead.GetString(8).ToString())
         End While
 
         sqlRead.Close()
@@ -202,11 +176,9 @@ Public Class DataMobil
                                         jenis As String,
                                         foto As String,
                                         merek_mobil As String,
-                                        jumlah_mobil As Integer,
                                         harga_sewa_mobil As Decimal,
                                         tahun_pembuatan As String,
-                                        tanggal_masuk As Date,
-                                        status_sewa As String
+                                        tanggal_masuk As Date
                                         )
         dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database
         Try
@@ -216,11 +188,9 @@ Public Class DataMobil
                         "jenis= '" & jenis & "',  " &
                         "foto_mobil= '" & foto & "',  " &
                         "merek= '" & merek_mobil & "',  " &
-                        "jumlah= '" & jumlah_mobil & "',  " &
                         "harga_sewa= '" & harga_sewa_mobil & "',  " &
                         "tahun_pembuatan= '" & tahun_pembuatan & "',  " &
-                        "tanggal_data_masuk= '" & tanggal_masuk.ToString("yyyy/MM/dd") & "',  " &
-                        "status_sewa= '" & status_sewa & "'  " &
+                        "tanggal_data_masuk= '" & tanggal_masuk.ToString("yyyy/MM/dd") & "'  " &
                         "WHERE mobil.id= '" & id & "'"
 
             Debug.Print(sqlQuery)

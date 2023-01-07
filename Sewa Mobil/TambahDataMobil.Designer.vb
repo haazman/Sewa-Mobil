@@ -24,8 +24,6 @@ Partial Class TambahDataMobil
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.fotoMobil = New System.Windows.Forms.PictureBox()
-        Me.tbJumlah = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.tbMerek = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tbHargaSewa = New System.Windows.Forms.TextBox()
@@ -33,8 +31,6 @@ Partial Class TambahDataMobil
         Me.tbTahunPembuatan = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.tbStatusSewa = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.addCarBtn = New System.Windows.Forms.Button()
         Me.cbJenis = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -48,7 +44,7 @@ Partial Class TambahDataMobil
         '
         Me.GroupBox1.Controls.Add(Me.fotoMobil)
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 6.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.GroupBox1.Location = New System.Drawing.Point(172, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(184, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(108, 155)
         Me.GroupBox1.TabIndex = 21
@@ -62,22 +58,6 @@ Partial Class TambahDataMobil
         Me.fotoMobil.Size = New System.Drawing.Size(105, 140)
         Me.fotoMobil.TabIndex = 0
         Me.fotoMobil.TabStop = False
-        '
-        'tbJumlah
-        '
-        Me.tbJumlah.Location = New System.Drawing.Point(29, 269)
-        Me.tbJumlah.Name = "tbJumlah"
-        Me.tbJumlah.Size = New System.Drawing.Size(188, 23)
-        Me.tbJumlah.TabIndex = 20
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(29, 251)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(45, 15)
-        Me.Label2.TabIndex = 19
-        Me.Label2.Text = "Jumlah"
         '
         'tbMerek
         '
@@ -97,7 +77,7 @@ Partial Class TambahDataMobil
         '
         'tbHargaSewa
         '
-        Me.tbHargaSewa.Location = New System.Drawing.Point(29, 333)
+        Me.tbHargaSewa.Location = New System.Drawing.Point(29, 269)
         Me.tbHargaSewa.Name = "tbHargaSewa"
         Me.tbHargaSewa.Size = New System.Drawing.Size(188, 23)
         Me.tbHargaSewa.TabIndex = 23
@@ -105,7 +85,7 @@ Partial Class TambahDataMobil
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(29, 315)
+        Me.Label3.Location = New System.Drawing.Point(29, 251)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(69, 15)
         Me.Label3.TabIndex = 22
@@ -136,26 +116,10 @@ Partial Class TambahDataMobil
         Me.Label6.TabIndex = 28
         Me.Label6.Text = "Tanggal Masuk"
         '
-        'tbStatusSewa
-        '
-        Me.tbStatusSewa.Location = New System.Drawing.Point(254, 333)
-        Me.tbStatusSewa.Name = "tbStatusSewa"
-        Me.tbStatusSewa.Size = New System.Drawing.Size(188, 23)
-        Me.tbStatusSewa.TabIndex = 31
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(254, 315)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(69, 15)
-        Me.Label7.TabIndex = 30
-        Me.Label7.Text = "Status Sewa"
-        '
         'addCarBtn
         '
         Me.addCarBtn.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.addCarBtn.Location = New System.Drawing.Point(294, 387)
+        Me.addCarBtn.Location = New System.Drawing.Point(303, 323)
         Me.addCarBtn.Name = "addCarBtn"
         Me.addCarBtn.Size = New System.Drawing.Size(106, 33)
         Me.addCarBtn.TabIndex = 32
@@ -166,7 +130,7 @@ Partial Class TambahDataMobil
         '
         Me.cbJenis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbJenis.FormattingEnabled = True
-        Me.cbJenis.Location = New System.Drawing.Point(29, 393)
+        Me.cbJenis.Location = New System.Drawing.Point(29, 329)
         Me.cbJenis.Name = "cbJenis"
         Me.cbJenis.Size = New System.Drawing.Size(188, 23)
         Me.cbJenis.TabIndex = 33
@@ -174,7 +138,7 @@ Partial Class TambahDataMobil
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(29, 372)
+        Me.Label4.Location = New System.Drawing.Point(29, 308)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(32, 15)
         Me.Label4.TabIndex = 34
@@ -195,21 +159,17 @@ Partial Class TambahDataMobil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(472, 480)
+        Me.ClientSize = New System.Drawing.Size(472, 379)
         Me.Controls.Add(Me.dtpTanggalMasuk)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.cbJenis)
         Me.Controls.Add(Me.addCarBtn)
-        Me.Controls.Add(Me.tbStatusSewa)
-        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.tbTahunPembuatan)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.tbHargaSewa)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.tbJumlah)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.tbMerek)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
@@ -228,8 +188,6 @@ Partial Class TambahDataMobil
     Friend WithEvents GroupBox1 As GroupBox
 
     Friend WithEvents fotoMobil As PictureBox
-    Friend WithEvents tbJumlah As TextBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents tbMerek As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents tbHargaSewa As TextBox
@@ -237,9 +195,6 @@ Partial Class TambahDataMobil
     Friend WithEvents tbTahunPembuatan As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents tbStatusSewa As TextBox
-
-    Friend WithEvents Label7 As Label
     Friend WithEvents TextBox6 As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents addCarBtn As Button
