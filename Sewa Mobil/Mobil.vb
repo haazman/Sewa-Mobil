@@ -28,11 +28,9 @@ Public Class mobil
 
             DataMobil.GSjenis = selectedData(1)
             DataMobil.GSmerek = selectedData(3)
-            DataMobil.GSjumlah = selectedData(4)
-            DataMobil.GSharga = selectedData(5)
-            DataMobil.GStahun = selectedData(6)
-            DataMobil.GStanggal = selectedData(7)
-            DataMobil.GSstatus = selectedData(8)
+            DataMobil.GSharga = selectedData(4)
+            DataMobil.GStahun = selectedData(5)
+            DataMobil.GStanggal = selectedData(6)
 
             Me.Hide()
             EditMobil.Show()
