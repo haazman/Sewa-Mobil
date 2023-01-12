@@ -1,5 +1,6 @@
 ﻿Imports Microsoft.SqlServer
 Imports MySql.Data.MySqlClient
+Imports System.Diagnostics.Metrics
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
 Public Class SewaMobil
 
@@ -129,9 +130,35 @@ Public Class SewaMobil
     Public Function updateData(id As Integer, statusSewa As String)
         dbConn.ConnectionString = "server =" + server + ";" + "user id =" + username + ";" + "password =" + password + ";" + "database =" + database
         Try
+
             dbConn.Open()
             sqlCommand.Connection = dbConn
             sqlQuery = "UPDATE sewa set status_sewa ='" & statusSewa & "' WHERE id = '" & id & "'"
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            dbConn.Close()
+
+            sqlRead.Close()
+            dbConn.Close()
+
+
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "SELECT merek from sewa where id = '" & id & "'"
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            Dim merek
+            While sqlRead.Read()
+                merek = sqlRead.GetString(0)
+            End While
+            dbConn.Close()
+
+            sqlRead.Close()
+            dbConn.Close()
+
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "UPDATE mobil set status_sewa ='" & statusSewa & "' WHERE id = '" & merek & "'"
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
             dbConn.Close()
