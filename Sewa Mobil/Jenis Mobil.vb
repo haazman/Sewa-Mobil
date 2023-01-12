@@ -37,7 +37,7 @@ Public Class Jenis_Mobil
             selectedJenis = selectedRow.Cells(0).Value
             selectedJenisNama = selectedRow.Cells(1).Value
         Catch ex As Exception
-
+            MessageBox.Show("Tidak Ada Data")
         End Try
 
     End Sub

@@ -50,6 +50,7 @@ Public Class SewaMobil
 
         Catch ex As Exception
             Return ex.Message
+
         Finally
             dbConn.Dispose()
         End Try

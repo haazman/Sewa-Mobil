@@ -13,7 +13,7 @@
     End Sub
 
     Private Sub Sewa_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        DataGridSewa.DataSource = sewa.getDataKoleksiDatabase()
+        reloadDataTableDatabase()
     End Sub
 
     Public Sub reloadDataTableDatabase()
