@@ -4,6 +4,7 @@ Public Class Sewa
     Public Shared sewa As New SewaMobil
     Public Shared selectedTableKoleksi
     Public Shared selectedTableKoleksiNama
+    Public Shared selectedTableKoleksiStatus
 
     Public Sub New()
 
@@ -42,8 +43,15 @@ Public Class Sewa
 
             selectedTableKoleksi = selectedRow.Cells(0).Value
             selectedTableKoleksiNama = selectedRow.Cells(1).Value
+            selectedTableKoleksiStatus = selectedRow.Cells(9).Value
+
         Catch ex As Exception
             MessageBox.Show(String.Format(ex.Message))
         End Try
+    End Sub
+
+    Private Sub btneditsewa_Click(sender As Object, e As EventArgs) Handles btneditsewa.Click
+        sewa.GSstatus = selectedTableKoleksiStatus
+        Ubah_Status_Sewa.Show()
     End Sub
 End Class
