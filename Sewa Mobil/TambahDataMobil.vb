@@ -11,7 +11,7 @@
         ' Add any initialization after the InitializeComponent() call.
         GetDataJenis()
     End Sub
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+    Private Sub Label2_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -41,17 +41,14 @@
     Private Sub addCarBtn_Click(sender As Object, e As EventArgs) Handles addCarBtn.Click
         mobil.DataMobil.GSjenis = cbJenis.SelectedValue
         mobil.DataMobil.GSmerek = tbMerek.Text
-        mobil.DataMobil.GSjumlah = tbJumlah.Text
         mobil.DataMobil.GSharga = tbHargaSewa.Text
         mobil.DataMobil.GStahun = tbTahunPembuatan.Text
         mobil.DataMobil.GStanggal = dtpTanggalMasuk.Value.ToString("yyyy/MM/dd")
-        mobil.DataMobil.GSstatus = tbStatusSewa.Text
 
         If (tbTahunPembuatan.Text >= 1901) Then
             mobil.DataMobil.AddDataKoleksiDatabase(mobil.DataMobil.GSjenis, mobil.DataMobil.GSfoto,
-                                             mobil.DataMobil.GSmerek, mobil.DataMobil.GSjumlah, mobil.DataMobil.GSharga,
-                                            mobil.DataMobil.GStahun, mobil.DataMobil.GStanggal,
-                                             mobil.DataMobil.GSstatus)
+                                             mobil.DataMobil.GSmerek, mobil.DataMobil.GSharga,
+                                            mobil.DataMobil.GStahun, mobil.DataMobil.GStanggal)
             Me.Hide()
             Me.Controls.Clear()
             Me.InitializeComponent()
@@ -64,7 +61,7 @@
 
     End Sub
 
-    Private Sub tbJumlah_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbJumlah.KeyPress
+    Private Sub tbJumlah_KeyPress(sender As Object, e As KeyPressEventArgs)
         Dim Ch As Char = e.KeyChar
 
         If Not Char.IsDigit(Ch) AndAlso Asc(Ch) <> 8 Then

@@ -26,15 +26,11 @@ Partial Class EditMobil
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cbJenis = New System.Windows.Forms.ComboBox()
         Me.editCarBtn = New System.Windows.Forms.Button()
-        Me.tbStatusSewa = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.tbTahunPembuatan = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.tbHargaSewa = New System.Windows.Forms.TextBox()
-        Me.tbJumlah = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.tbMerek = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.fotoMobil = New System.Windows.Forms.PictureBox()
@@ -54,7 +50,7 @@ Partial Class EditMobil
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(27, 381)
+        Me.Label4.Location = New System.Drawing.Point(27, 317)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(32, 15)
         Me.Label4.TabIndex = 50
@@ -64,7 +60,7 @@ Partial Class EditMobil
         '
         Me.cbJenis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbJenis.FormattingEnabled = True
-        Me.cbJenis.Location = New System.Drawing.Point(27, 402)
+        Me.cbJenis.Location = New System.Drawing.Point(27, 338)
         Me.cbJenis.Name = "cbJenis"
         Me.cbJenis.Size = New System.Drawing.Size(188, 23)
         Me.cbJenis.TabIndex = 49
@@ -72,28 +68,12 @@ Partial Class EditMobil
         'editCarBtn
         '
         Me.editCarBtn.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.editCarBtn.Location = New System.Drawing.Point(292, 396)
+        Me.editCarBtn.Location = New System.Drawing.Point(296, 332)
         Me.editCarBtn.Name = "editCarBtn"
         Me.editCarBtn.Size = New System.Drawing.Size(106, 33)
         Me.editCarBtn.TabIndex = 48
         Me.editCarBtn.Text = "Edit Car"
         Me.editCarBtn.UseVisualStyleBackColor = False
-        '
-        'tbStatusSewa
-        '
-        Me.tbStatusSewa.Location = New System.Drawing.Point(252, 342)
-        Me.tbStatusSewa.Name = "tbStatusSewa"
-        Me.tbStatusSewa.Size = New System.Drawing.Size(188, 23)
-        Me.tbStatusSewa.TabIndex = 47
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(252, 324)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(69, 15)
-        Me.Label7.TabIndex = 46
-        Me.Label7.Text = "Status Sewa"
         '
         'Label6
         '
@@ -126,26 +106,10 @@ Partial Class EditMobil
         '
         'tbHargaSewa
         '
-        Me.tbHargaSewa.Location = New System.Drawing.Point(27, 342)
+        Me.tbHargaSewa.Location = New System.Drawing.Point(27, 278)
         Me.tbHargaSewa.Name = "tbHargaSewa"
         Me.tbHargaSewa.Size = New System.Drawing.Size(188, 23)
         Me.tbHargaSewa.TabIndex = 42
-        '
-        'tbJumlah
-        '
-        Me.tbJumlah.Location = New System.Drawing.Point(27, 278)
-        Me.tbJumlah.Name = "tbJumlah"
-        Me.tbJumlah.Size = New System.Drawing.Size(188, 23)
-        Me.tbJumlah.TabIndex = 39
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(27, 260)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(45, 15)
-        Me.Label2.TabIndex = 38
-        Me.Label2.Text = "Jumlah"
         '
         'tbMerek
         '
@@ -174,7 +138,7 @@ Partial Class EditMobil
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(27, 324)
+        Me.Label3.Location = New System.Drawing.Point(27, 260)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(69, 15)
         Me.Label3.TabIndex = 41
@@ -195,19 +159,15 @@ Partial Class EditMobil
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(466, 450)
+        Me.ClientSize = New System.Drawing.Size(466, 370)
         Me.Controls.Add(Me.dtpTanggalMasuk)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.cbJenis)
         Me.Controls.Add(Me.editCarBtn)
-        Me.Controls.Add(Me.tbStatusSewa)
-        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.tbTahunPembuatan)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.tbHargaSewa)
-        Me.Controls.Add(Me.tbJumlah)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.tbMerek)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label3)
@@ -229,15 +189,11 @@ Partial Class EditMobil
     Friend WithEvents Label4 As Label
     Friend WithEvents cbJenis As ComboBox
     Friend WithEvents addCarBtn As Button
-    Friend WithEvents tbStatusSewa As TextBox
-    Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents tbTahunPembuatan As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents tbHargaSewa As TextBox
-    Friend WithEvents tbJumlah As TextBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents tbMerek As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents fotoMobil As PictureBox
