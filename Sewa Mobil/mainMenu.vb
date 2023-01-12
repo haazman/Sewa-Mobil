@@ -18,4 +18,8 @@
         Jenis_Mobil.Show()
     End Sub
 
+    Private Sub sewaBtn_Click(sender As Object, e As EventArgs) Handles sewaBtn.Click
+        Me.Hide()
+        Sewa.Show()
+    End Sub
 End Class

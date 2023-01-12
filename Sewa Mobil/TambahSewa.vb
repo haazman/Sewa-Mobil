@@ -8,7 +8,7 @@
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-        Dim dataTableMobil = mobil.DataMobil.GetDataMobilDatabase
+        Dim dataTableMobil = mobil.DataMobil.GetDataMobilDatabaseWhereTersedia
         cbmerk.DataSource = dataTableMobil
         cbmerk.DisplayMember = "Merek Mobil"
         cbmerk.ValueMember = "ID"

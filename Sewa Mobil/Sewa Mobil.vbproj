@@ -4,7 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
     <RootNamespace>Sewa_Mobil</RootNamespace>
-    <StartupObject>Sewa_Mobil.Sewa</StartupObject>
+    <StartupObject>Sewa_Mobil.SignIn</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
     <UseWPF>False</UseWPF>

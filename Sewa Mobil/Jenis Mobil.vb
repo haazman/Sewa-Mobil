@@ -29,12 +29,17 @@ Public Class Jenis_Mobil
     End Sub
 
     Private Sub dataGridJenis_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridJenis.CellClick
-        Dim index As Integer = e.RowIndex
-        Dim selectedRow As DataGridViewRow
-        selectedRow = dataGridJenis.Rows(index)
+        Try
+            Dim index As Integer = e.RowIndex
+            Dim selectedRow As DataGridViewRow
+            selectedRow = dataGridJenis.Rows(index)
 
-        selectedJenis = selectedRow.Cells(0).Value
-        selectedJenisNama = selectedRow.Cells(1).Value
+            selectedJenis = selectedRow.Cells(0).Value
+            selectedJenisNama = selectedRow.Cells(1).Value
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub btnKurang_Click(sender As Object, e As EventArgs) Handles btnKurang.Click

@@ -117,6 +117,29 @@ Public Class DataMobil
         Return result
     End Function
 
+    Public Function GetDataMobilDatabaseWhereTersedia() As DataTable
+        Dim result As New DataTable
+
+        dbConn.ConnectionString = "server = " + server + ";" + "user id = " + username + ";" + "password = " + password + ";" + "database = " + database + ";" + "Convert Zero Datetime=True"
+        dbConn.Open()
+        sqlCommand.Connection = dbConn
+        sqlCommand.CommandText = "SELECT mobil.id AS 'ID',
+                                  jenis_mobil AS 'Jenis',
+                                  foto_mobil AS 'Foto Mobil',
+                                  merek AS 'Merek Mobil',
+                                  harga_sewa AS 'Harga Sewa',
+                                  tahun_pembuatan AS 'Tahun Pembuatan',
+                                  tanggal_data_masuk AS 'Tanggal Masuk'
+                                  FROM mobil INNER JOIN `jenis mobil` ON mobil.jenis = `jenis mobil`.id where status_sewa = 'Tersedia'"
+
+        sqlRead = sqlCommand.ExecuteReader
+
+        result.Load(sqlRead)
+        sqlRead.Close()
+        dbConn.Close()
+        Return result
+    End Function
+
 
 
     Public Function AddDataKoleksiDatabase(

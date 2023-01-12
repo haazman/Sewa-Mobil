@@ -24,4 +24,8 @@
         Dim tambahSewa = New TambahSewa()
         tambahSewa.Show()
     End Sub
+
+    Private Sub Sewa_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        mainMenu.Show()
+    End Sub
 End Class

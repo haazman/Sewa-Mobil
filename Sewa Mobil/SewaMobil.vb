@@ -20,7 +20,7 @@ Public Class SewaMobil
         dbConn.ConnectionString = "server =" + server + ";" + "user id =" + username + ";" + "password =" + password + ";" + "database =" + database + ";Convert Zero Datetime=True"
         dbConn.Open()
         sqlCommand.Connection = dbConn
-        sqlCommand.CommandText = "SELECT sewa.id as 'ID', mobil.merek as 'Merek Mobil', penyewa.nama 'Nama', rencana_pinjam 'Rencana Pinjam', tanggal_pinjam 'Tanggal Pinjam',tanggal_kembali 'Tanggal Kembali', total_biaya_sewa as 'Total Biaya',biaya_kelebihan_pinjam as 'Kembalian', total_bayar as 'Total Bayar', status_sewa as 'Status Sewa'  FROM sewa INNER JOIN `mobil` ON sewa.merek =`mobil`.id INNER JOIN penyewa ON sewa.penyewa = penyewa.id_penyewa"
+        sqlCommand.CommandText = "SELECT sewa.id as 'ID', mobil.merek as 'Merek Mobil', penyewa.nama 'Nama', rencana_pinjam 'Rencana Pinjam', tanggal_pinjam 'Tanggal Pinjam',tanggal_kembali 'Tanggal Kembali', total_biaya_sewa as 'Total Biaya',biaya_kelebihan_pinjam as 'Kembalian', total_bayar as 'Total Bayar', sewa.status_sewa as 'Status Sewa'  FROM sewa INNER JOIN `mobil` ON sewa.merek =`mobil`.id INNER JOIN penyewa ON sewa.penyewa = penyewa.id_penyewa"
 
         sqlRead = sqlCommand.ExecuteReader
 
@@ -29,6 +29,8 @@ Public Class SewaMobil
         dbConn.Close()
         Return result
     End Function
+
+
 
     Public Function inputData(merek As Integer, penyewa As Integer, rencanaPinjam As String, tanggalPinjam As String, tanggalKembali As String, statusSewa As String, total_bayar As Integer, total_biaya As Integer)
         dbConn.ConnectionString = "server =" + server + ";" + "user id =" + username + ";" + "password =" + password + ";" + "database =" + database
