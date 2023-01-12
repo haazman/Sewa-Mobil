@@ -1,7 +1,7 @@
-﻿Imports Org.BouncyCastle.Asn1.IsisMtt
+Imports Org.BouncyCastle.Asn1.IsisMtt
 
 Public Class Jenis_Mobil
-    Public Shared jenisMobil As JenisMobil
+    Public Shared jenisMobil As New JenisMobil()
     Public selectedJenis As Integer
     Public selectedJenisNama As String
     Public Sub New()
@@ -29,12 +29,17 @@ Public Class Jenis_Mobil
     End Sub
 
     Private Sub dataGridJenis_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridJenis.CellClick
-        Dim index As Integer = e.RowIndex
-        Dim selectedRow As DataGridViewRow
-        selectedRow = dataGridJenis.Rows(index)
+        Try
+            Dim index As Integer = e.RowIndex
+            Dim selectedRow As DataGridViewRow
+            selectedRow = dataGridJenis.Rows(index)
 
-        selectedJenis = selectedRow.Cells(0).Value
-        selectedJenisNama = selectedRow.Cells(1).Value
+            selectedJenis = selectedRow.Cells(0).Value
+            selectedJenisNama = selectedRow.Cells(1).Value
+        Catch ex As Exception
+            MessageBox.Show("Tidak Ada Data")
+        End Try
+
     End Sub
 
     Private Sub btnKurang_Click(sender As Object, e As EventArgs) Handles btnKurang.Click
@@ -45,5 +50,10 @@ Public Class Jenis_Mobil
             MessageBox.Show("Dipilih Dulu Kak")
         End If
 
+    End Sub
+
+    Private Sub Jenis_Mobil_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        Dim mainMenu = New mainMenu()
+        mainMenu.Show()
     End Sub
 End Class

@@ -43,6 +43,8 @@ Public Class JenisMobil
         Return result
     End Function
 
+
+
     Public Function inputData(jenis As String)
         dbConn.ConnectionString = "server =" + server + ";" + "user id =" + username + ";" + "password =" + password + ";" + "database =" + database
         Try
@@ -87,4 +89,3 @@ Public Class JenisMobil
     End Function
 
 End Class
-
