@@ -31,7 +31,6 @@
         OpenFileDialog1.ShowDialog()
 
         foto_mobil = OpenFileDialog1.FileName
-
         fotoMobil.Load(foto_mobil)
         fotoMobil.SizeMode = PictureBoxSizeMode.StretchImage
         mobil.DataMobil.GSfoto = foto_mobil.ToString()
@@ -39,24 +38,29 @@
     End Sub
 
     Private Sub addCarBtn_Click(sender As Object, e As EventArgs) Handles addCarBtn.Click
-        mobil.DataMobil.GSjenis = cbJenis.SelectedValue
-        mobil.DataMobil.GSmerek = tbMerek.Text
-        mobil.DataMobil.GSharga = tbHargaSewa.Text
-        mobil.DataMobil.GStahun = tbTahunPembuatan.Text
-        mobil.DataMobil.GStanggal = dtpTanggalMasuk.Value.ToString("yyyy/MM/dd")
+        Try
+            mobil.DataMobil.GSjenis = cbJenis.SelectedValue
+            mobil.DataMobil.GSmerek = tbMerek.Text
+            mobil.DataMobil.GSharga = tbHargaSewa.Text
+            mobil.DataMobil.GStahun = tbTahunPembuatan.Text
+            mobil.DataMobil.GStanggal = dtpTanggalMasuk.Value.ToString("yyyy/MM/dd")
 
-        If (tbTahunPembuatan.Text >= 1901) Then
-            mobil.DataMobil.AddDataKoleksiDatabase(mobil.DataMobil.GSjenis, mobil.DataMobil.GSfoto,
+            If (tbTahunPembuatan.Text >= 1901 And foto_mobil IsNot Nothing) Then
+                mobil.DataMobil.AddDataKoleksiDatabase(mobil.DataMobil.GSjenis, mobil.DataMobil.GSfoto,
                                              mobil.DataMobil.GSmerek, mobil.DataMobil.GSharga,
                                             mobil.DataMobil.GStahun, mobil.DataMobil.GStanggal)
-            Me.Hide()
-            Me.Controls.Clear()
-            Me.InitializeComponent()
-            mobil.Show()
-        Else
-            MessageBox.Show("Add a Valid Year!")
-        End If
+                foto_mobil = Nothing
+                Me.Close()
+                mobil.Show()
+            ElseIf tbTahunPembuatan.Text < 1901 Then
+                MessageBox.Show("Add a Valid Year!")
+            ElseIf foto_mobil Is Nothing Then
+                MessageBox.Show("Masukkan Foto!")
+            End If
 
+        Catch ex As Exception
+            MessageBox.Show("Input data!")
+        End Try
 
 
     End Sub
