@@ -4,7 +4,7 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
 Public Class SewaMobil
 
     Private koleksiDataTable As New ArrayList()
-
+    Private statusSewa As String
     Public Shared dbConn As New MySqlConnection
     Public Shared sqlCommand As New MySqlCommand
     Public Shared sqlRead As MySqlDataReader
@@ -14,6 +14,16 @@ Public Class SewaMobil
     Private username As String = "root"
     Private password As String = ""
     Private database As String = "sewamobil"
+
+    Public Property GSstatus As String
+        Get
+            Return statusSewa
+        End Get
+        Set(value As String)
+            statusSewa = value
+        End Set
+    End Property
+
 
     Public Function getDataKoleksiDatabase() As DataTable
         Dim result As New DataTable
@@ -94,5 +104,48 @@ Public Class SewaMobil
         End Try
 
     End Function
+
+    Public Function deleteData(id As Integer)
+        dbConn.ConnectionString = "server =" + server + ";" + "user id =" + username + ";" + "password =" + password + ";" + "database =" + database
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "DELETE FROM `sewa` WHERE id = '" & id & "'"
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            dbConn.Close()
+
+            sqlRead.Close()
+            dbConn.Close()
+
+
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
+    Public Function updateData(id As Integer, statusSewa As String)
+        dbConn.ConnectionString = "server =" + server + ";" + "user id =" + username + ";" + "password =" + password + ";" + "database =" + database
+        Try
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "UPDATE sewa set status_sewa ='" & statusSewa & "' WHERE id = '" & id & "'"
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            dbConn.Close()
+
+            sqlRead.Close()
+            dbConn.Close()
+
+
+        Catch ex As Exception
+            Return ex.Message
+        Finally
+            dbConn.Dispose()
+        End Try
+    End Function
+
 
 End Class
