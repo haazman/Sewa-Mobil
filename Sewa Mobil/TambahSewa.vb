@@ -54,5 +54,6 @@
 
     Private Sub numRencana_TextChanged(sender As Object, e As EventArgs) Handles numRencana.TextChanged
         lblBiaya.Text = "RP. " & hargaInt * numRencana.Value & ",00"
+        totalHarga = hargaInt * numRencana.Value
     End Sub
 End Class

@@ -34,12 +34,23 @@ Public Class SewaMobil
 
     Public Function inputData(merek As Integer, penyewa As Integer, rencanaPinjam As String, tanggalPinjam As String, tanggalKembali As String, statusSewa As String, total_bayar As Integer, total_biaya As Integer)
         dbConn.ConnectionString = "server =" + server + ";" + "user id =" + username + ";" + "password =" + password + ";" + "database =" + database
+
         Dim biaya_kelebihan_pinjam = total_bayar - total_biaya
         Try
             Dim harga As String = getHargaMobil(merek)
             dbConn.Open()
             sqlCommand.Connection = dbConn
             sqlQuery = "insert into sewa (merek, penyewa,rencana_pinjam,tanggal_pinjam,tanggal_kembali, total_biaya_sewa,biaya_kelebihan_pinjam, total_bayar, status_sewa) value('" & merek & "','" & penyewa & "','" & rencanaPinjam & "','" & tanggalPinjam & "','" & tanggalKembali & "','" & total_biaya & "','" & biaya_kelebihan_pinjam & "','" & total_bayar & "','" & statusSewa & "')"
+            sqlCommand = New MySqlCommand(sqlQuery, dbConn)
+            sqlRead = sqlCommand.ExecuteReader
+            dbConn.Close()
+
+            sqlRead.Close()
+            dbConn.Close()
+
+            dbConn.Open()
+            sqlCommand.Connection = dbConn
+            sqlQuery = "UPDATE MOBIL SET status_sewa = 'Tidak Tersedia WHERE ID =  '" & merek & "'"
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
             dbConn.Close()
