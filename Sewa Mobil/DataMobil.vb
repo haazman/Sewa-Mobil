@@ -90,7 +90,8 @@ Public Class DataMobil
                                   merek AS 'Merek Mobil',
                                   harga_sewa AS 'Harga Sewa',
                                   tahun_pembuatan AS 'Tahun Pembuatan',
-                                  tanggal_data_masuk AS 'Tanggal Masuk'
+                                  tanggal_data_masuk AS 'Tanggal Masuk',
+                                  status_sewa AS 'Status Sewa'
                                   FROM mobil INNER JOIN `jenis mobil` ON mobil.jenis = `jenis mobil`.id"
 
         sqlRead = sqlCommand.ExecuteReader
@@ -151,7 +152,8 @@ Public Class DataMobil
                                   merek,
                                   harga_sewa,
                                   tahun_pembuatan,
-                                  tanggal_data_masuk
+                                  tanggal_data_masuk,
+                                  status_sewa
                                   FROM mobil INNER JOIN `jenis mobil` ON mobil.jenis = `jenis mobil`.id
                                   WHERE mobil.id ='" & ID & "' "
         sqlRead = sqlCommand.ExecuteReader
@@ -164,6 +166,7 @@ Public Class DataMobil
             result.Add(sqlRead.GetString(4).ToString())
             result.Add(sqlRead.GetString(5).ToString())
             result.Add(sqlRead.GetString(6).ToString())
+            result.Add(sqlRead.GetString(7).ToString())
         End While
 
         sqlRead.Close()
