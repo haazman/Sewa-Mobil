@@ -5,7 +5,6 @@
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-
         fotoMobil.Load(mobil.DataMobil.GSfoto)
         fotoMobil.SizeMode = PictureBoxSizeMode.StretchImage
         dtpTanggalMasuk.Format = DateTimePickerFormat.Custom
