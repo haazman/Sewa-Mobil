@@ -61,7 +61,7 @@ Public Class SewaMobil
 
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "UPDATE MOBIL SET status_sewa = 'Tidak Tersedia WHERE ID =  '" & merek & "'"
+            sqlQuery = "UPDATE MOBIL SET status_sewa = 'Tidak Tersedia' WHERE ID =  '" & merek & "'"
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
             dbConn.Close()
@@ -158,7 +158,13 @@ Public Class SewaMobil
 
             dbConn.Open()
             sqlCommand.Connection = dbConn
-            sqlQuery = "UPDATE mobil set status_sewa ='" & statusSewa & "' WHERE id = '" & merek & "'"
+            If statusSewa = "Disewa" Then
+                sqlQuery = "UPDATE mobil set status_sewa ='Tidak Tersedia' WHERE id = '" & merek & "'"
+            End If
+            If statusSewa = "Selesai" Then
+                sqlQuery = "UPDATE mobil set status_sewa ='Tersedia' WHERE id = '" & merek & "'"
+            End If
+
             sqlCommand = New MySqlCommand(sqlQuery, dbConn)
             sqlRead = sqlCommand.ExecuteReader
             dbConn.Close()

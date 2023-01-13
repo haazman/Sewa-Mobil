@@ -43,7 +43,7 @@ Partial Class Ubah_Status_Sewa
         'rdbdisewa
         '
         Me.rdbdisewa.AutoSize = True
-        Me.rdbdisewa.Location = New System.Drawing.Point(6, 22)
+        Me.rdbdisewa.Location = New System.Drawing.Point(6, 31)
         Me.rdbdisewa.Name = "rdbdisewa"
         Me.rdbdisewa.Size = New System.Drawing.Size(62, 19)
         Me.rdbdisewa.TabIndex = 1
@@ -54,7 +54,7 @@ Partial Class Ubah_Status_Sewa
         'rdbselesai
         '
         Me.rdbselesai.AutoSize = True
-        Me.rdbselesai.Location = New System.Drawing.Point(6, 47)
+        Me.rdbselesai.Location = New System.Drawing.Point(8, 56)
         Me.rdbselesai.Name = "rdbselesai"
         Me.rdbselesai.Size = New System.Drawing.Size(60, 19)
         Me.rdbselesai.TabIndex = 2
@@ -71,7 +71,7 @@ Partial Class Ubah_Status_Sewa
         Me.GroupBox1.Size = New System.Drawing.Size(200, 100)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "GroupBox1"
+        Me.GroupBox1.Text = "Status"
         '
         'BtnUbah
         '

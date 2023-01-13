@@ -54,4 +54,8 @@ Public Class Sewa
         sewa.GSstatus = selectedTableKoleksiStatus
         Ubah_Status_Sewa.Show()
     End Sub
+
+    Private Sub Sewa_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        mainMenu.Show()
+    End Sub
 End Class

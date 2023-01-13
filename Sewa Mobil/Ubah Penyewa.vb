@@ -25,4 +25,8 @@
         FormPenyewa.penyewa.updateData(id, nik, nama, alamat)
         Me.Close()
     End Sub
+
+    Private Sub Ubah_Penyewa_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        FormPenyewa.Show()
+    End Sub
 End Class

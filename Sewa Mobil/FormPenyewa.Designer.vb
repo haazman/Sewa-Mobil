@@ -32,49 +32,54 @@ Partial Class FormPenyewa
         'dataGridPenyewa
         '
         Me.dataGridPenyewa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dataGridPenyewa.Location = New System.Drawing.Point(12, 12)
+        Me.dataGridPenyewa.Location = New System.Drawing.Point(51, 11)
+        Me.dataGridPenyewa.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dataGridPenyewa.Name = "dataGridPenyewa"
         Me.dataGridPenyewa.RowHeadersWidth = 51
         Me.dataGridPenyewa.RowTemplate.Height = 29
-        Me.dataGridPenyewa.Size = New System.Drawing.Size(592, 344)
+        Me.dataGridPenyewa.Size = New System.Drawing.Size(455, 258)
         Me.dataGridPenyewa.TabIndex = 0
         '
         'btnPenyewa
         '
-        Me.btnPenyewa.Location = New System.Drawing.Point(12, 378)
+        Me.btnPenyewa.Location = New System.Drawing.Point(23, 286)
+        Me.btnPenyewa.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnPenyewa.Name = "btnPenyewa"
-        Me.btnPenyewa.Size = New System.Drawing.Size(148, 66)
+        Me.btnPenyewa.Size = New System.Drawing.Size(130, 50)
         Me.btnPenyewa.TabIndex = 1
         Me.btnPenyewa.Text = "Tambah Penyewa"
         Me.btnPenyewa.UseVisualStyleBackColor = True
         '
         'btnUbah
         '
-        Me.btnUbah.Location = New System.Drawing.Point(238, 378)
+        Me.btnUbah.Location = New System.Drawing.Point(221, 286)
+        Me.btnUbah.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnUbah.Name = "btnUbah"
-        Me.btnUbah.Size = New System.Drawing.Size(146, 66)
+        Me.btnUbah.Size = New System.Drawing.Size(128, 50)
         Me.btnUbah.TabIndex = 2
         Me.btnUbah.Text = "Ubah Penyewa"
         Me.btnUbah.UseVisualStyleBackColor = True
         '
         'btnHapus
         '
-        Me.btnHapus.Location = New System.Drawing.Point(456, 378)
+        Me.btnHapus.Location = New System.Drawing.Point(412, 286)
+        Me.btnHapus.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnHapus.Name = "btnHapus"
-        Me.btnHapus.Size = New System.Drawing.Size(142, 66)
+        Me.btnHapus.Size = New System.Drawing.Size(124, 50)
         Me.btnHapus.TabIndex = 3
         Me.btnHapus.Text = "Hapus Penyewa"
         Me.btnHapus.UseVisualStyleBackColor = True
         '
         'FormPenyewa
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(640, 474)
+        Me.ClientSize = New System.Drawing.Size(560, 356)
         Me.Controls.Add(Me.btnHapus)
         Me.Controls.Add(Me.btnUbah)
         Me.Controls.Add(Me.btnPenyewa)
         Me.Controls.Add(Me.dataGridPenyewa)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "FormPenyewa"
         Me.Text = "FormPenyewa"
         CType(Me.dataGridPenyewa, System.ComponentModel.ISupportInitialize).EndInit()

@@ -10,6 +10,6 @@ Public Class Tambah_Penyewa
     End Sub
 
     Private Sub Tambah_Penyewa_Closed(sender As Object, e As EventArgs) Handles Me.Closed
-
+        FormPenyewa.Show()
     End Sub
 End Class

@@ -30,6 +30,7 @@
     Private Sub btnPenyewa_Click(sender As Object, e As EventArgs) Handles btnPenyewa.Click
         Dim tambahMenu = New Tambah_Penyewa()
         tambahMenu.Show()
+        Me.Hide()
     End Sub
 
     Private Sub btnUbah_Click(sender As Object, e As EventArgs) Handles btnUbah.Click
@@ -46,14 +47,18 @@
     Private Sub dataGridPenyewa_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataGridPenyewa.CellClick
         Dim index As Integer = e.RowIndex
         Dim selectedRow As DataGridViewRow
-        selectedRow = dataGridPenyewa.Rows(index)
+        Try
+            selectedRow = dataGridPenyewa.Rows(index)
 
-        selectedPenyewa = selectedRow.Cells(0).Value
-        selectedNamaPenyewa = selectedRow.Cells(1).Value
+            selectedPenyewa = selectedRow.Cells(0).Value
+            selectedNamaPenyewa = selectedRow.Cells(2).Value
+        Catch ex As Exception
+            MessageBox.Show(String.Format(ex.Message))
+        End Try
     End Sub
 
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
-        Dim hapusJenis = New Hapus_jenis()
-        hapusJenis.ShowDialog()
+        Dim hapusPenyewa = New Hapus_Penyewa()
+        hapusPenyewa.Show()
     End Sub
 End Class

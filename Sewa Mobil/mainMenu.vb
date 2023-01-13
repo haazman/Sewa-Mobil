@@ -22,4 +22,9 @@
         Me.Hide()
         Sewa.Show()
     End Sub
+
+    Private Sub penyewaBtn_Click(sender As Object, e As EventArgs) Handles penyewaBtn.Click
+        Me.Hide()
+        FormPenyewa.Show()
+    End Sub
 End Class

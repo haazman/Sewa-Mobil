@@ -29,9 +29,10 @@ Partial Class Hapus_Penyewa
         '
         'btnHapus
         '
-        Me.btnHapus.Location = New System.Drawing.Point(126, 194)
+        Me.btnHapus.Location = New System.Drawing.Point(122, 146)
+        Me.btnHapus.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnHapus.Name = "btnHapus"
-        Me.btnHapus.Size = New System.Drawing.Size(94, 29)
+        Me.btnHapus.Size = New System.Drawing.Size(82, 22)
         Me.btnHapus.TabIndex = 0
         Me.btnHapus.Text = "Hapus"
         Me.btnHapus.UseVisualStyleBackColor = True
@@ -40,9 +41,9 @@ Partial Class Hapus_Penyewa
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 28.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(101, 38)
+        Me.Label1.Location = New System.Drawing.Point(102, 23)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(159, 62)
+        Me.Label1.Size = New System.Drawing.Size(128, 51)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Hapus"
         '
@@ -50,20 +51,21 @@ Partial Class Hapus_Penyewa
         '
         Me.lblHapus.AutoSize = True
         Me.lblHapus.ForeColor = System.Drawing.Color.Red
-        Me.lblHapus.Location = New System.Drawing.Point(142, 124)
+        Me.lblHapus.Location = New System.Drawing.Point(138, 102)
         Me.lblHapus.Name = "lblHapus"
-        Me.lblHapus.Size = New System.Drawing.Size(68, 20)
+        Me.lblHapus.Size = New System.Drawing.Size(54, 15)
         Me.lblHapus.TabIndex = 2
         Me.lblHapus.Text = "lblHapus"
         '
         'Hapus_Penyewa
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(375, 267)
+        Me.ClientSize = New System.Drawing.Size(328, 200)
         Me.Controls.Add(Me.lblHapus)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnHapus)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Hapus_Penyewa"
         Me.Text = "Hapus_Penyewa"
         Me.ResumeLayout(False)

@@ -34,18 +34,19 @@ Partial Class mainMenu
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(135, 32)
+        Me.Label1.Location = New System.Drawing.Point(103, 18)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(179, 41)
+        Me.Label1.Size = New System.Drawing.Size(145, 32)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Main Menu"
         '
         'mobilBtn
         '
         Me.mobilBtn.BackColor = System.Drawing.Color.SkyBlue
-        Me.mobilBtn.Location = New System.Drawing.Point(118, 84)
+        Me.mobilBtn.Location = New System.Drawing.Point(103, 63)
+        Me.mobilBtn.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.mobilBtn.Name = "mobilBtn"
-        Me.mobilBtn.Size = New System.Drawing.Size(166, 35)
+        Me.mobilBtn.Size = New System.Drawing.Size(145, 26)
         Me.mobilBtn.TabIndex = 1
         Me.mobilBtn.Text = "Mobil"
         Me.mobilBtn.UseVisualStyleBackColor = False
@@ -53,9 +54,10 @@ Partial Class mainMenu
         'jenisBtn
         '
         Me.jenisBtn.BackColor = System.Drawing.Color.SkyBlue
-        Me.jenisBtn.Location = New System.Drawing.Point(118, 140)
+        Me.jenisBtn.Location = New System.Drawing.Point(103, 105)
+        Me.jenisBtn.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.jenisBtn.Name = "jenisBtn"
-        Me.jenisBtn.Size = New System.Drawing.Size(166, 35)
+        Me.jenisBtn.Size = New System.Drawing.Size(145, 26)
         Me.jenisBtn.TabIndex = 2
         Me.jenisBtn.Text = "Jenis Mobil"
         Me.jenisBtn.UseVisualStyleBackColor = False
@@ -63,9 +65,10 @@ Partial Class mainMenu
         'penyewaBtn
         '
         Me.penyewaBtn.BackColor = System.Drawing.Color.SkyBlue
-        Me.penyewaBtn.Location = New System.Drawing.Point(118, 199)
+        Me.penyewaBtn.Location = New System.Drawing.Point(103, 149)
+        Me.penyewaBtn.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.penyewaBtn.Name = "penyewaBtn"
-        Me.penyewaBtn.Size = New System.Drawing.Size(166, 35)
+        Me.penyewaBtn.Size = New System.Drawing.Size(145, 26)
         Me.penyewaBtn.TabIndex = 3
         Me.penyewaBtn.Text = "Penyewa"
         Me.penyewaBtn.UseVisualStyleBackColor = False
@@ -73,9 +76,10 @@ Partial Class mainMenu
         'sewaBtn
         '
         Me.sewaBtn.BackColor = System.Drawing.Color.SkyBlue
-        Me.sewaBtn.Location = New System.Drawing.Point(118, 257)
+        Me.sewaBtn.Location = New System.Drawing.Point(103, 193)
+        Me.sewaBtn.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.sewaBtn.Name = "sewaBtn"
-        Me.sewaBtn.Size = New System.Drawing.Size(166, 35)
+        Me.sewaBtn.Size = New System.Drawing.Size(145, 26)
         Me.sewaBtn.TabIndex = 4
         Me.sewaBtn.Text = "Sewa"
         Me.sewaBtn.UseVisualStyleBackColor = False
@@ -83,18 +87,19 @@ Partial Class mainMenu
         'logoutBtn
         '
         Me.logoutBtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.logoutBtn.Location = New System.Drawing.Point(12, 12)
+        Me.logoutBtn.Location = New System.Drawing.Point(10, 9)
+        Me.logoutBtn.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.logoutBtn.Name = "logoutBtn"
-        Me.logoutBtn.Size = New System.Drawing.Size(69, 37)
+        Me.logoutBtn.Size = New System.Drawing.Size(60, 28)
         Me.logoutBtn.TabIndex = 5
         Me.logoutBtn.Text = "Log Out"
         Me.logoutBtn.UseVisualStyleBackColor = False
         '
         'mainMenu
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(374, 312)
+        Me.ClientSize = New System.Drawing.Size(346, 242)
         Me.ControlBox = False
         Me.Controls.Add(Me.logoutBtn)
         Me.Controls.Add(Me.sewaBtn)
@@ -103,6 +108,7 @@ Partial Class mainMenu
         Me.Controls.Add(Me.mobilBtn)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "mainMenu"
