@@ -1,4 +1,5 @@
-﻿Imports Microsoft.VisualBasic.Logging
+﻿Imports System.Net.Mail
+Imports Microsoft.VisualBasic.Logging
 
 Public Class SignUp
 
@@ -28,15 +29,25 @@ Public Class SignUp
 
     Private Sub signUpBtn_Click(sender As Object, e As EventArgs) Handles signUpBtn.Click
         If tbUsername.Text.Length > 0 And tbPassword.Text.Length > 0 Then
-            SignIn.Users.AddUsersDatabase(tbUsername.Text, tbEmail.Text, tbPass.Text, SignIn.Users.GSFoto)
-            Me.Hide()
+            If tbPass.Text.Length >= 8 Then
+                Try
+                    Dim testAddress = New MailAddress(tbEmail.Text)
+                    SignIn.Users.AddUsersDatabase(tbUsername.Text, tbEmail.Text, tbPass.Text, SignIn.Users.GSFoto)
+                    Me.Hide()
 
-            Me.Controls.Clear()
-            Me.InitializeComponent()
+                    Me.Controls.Clear()
+                    Me.InitializeComponent()
 
-            SignIn.Show()
+                    SignIn.Show()
+                Catch ex As FormatException
+                    MessageBox.Show("Not a valid email address")
+                End Try
+
+            Else
+                MessageBox.Show("Password must be at least 8 characters long!")
+            End If
         Else
-            MessageBox.Show("Insert Data!")
+                MessageBox.Show("Insert Data!")
         End If
     End Sub
 
@@ -50,5 +61,15 @@ Public Class SignUp
 
     Private Sub showPassCheck_CheckedChanged(sender As Object, e As EventArgs) Handles showPassCheck.CheckedChanged
         tbPass.UseSystemPasswordChar = Not showPassCheck.Checked
+    End Sub
+
+    Private Sub tbEmail_TextChanged(sender As Object, e As EventArgs) Handles tbEmail.TextChanged
+
+    End Sub
+
+    Private Sub tbUsername_KeyDown(sender As Object, e As KeyEventArgs) Handles tbUsername.KeyDown
+        If e.KeyCode = Keys.Space Then
+            e.SuppressKeyPress = True
+        End If
     End Sub
 End Class
